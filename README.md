@@ -1,3 +1,24 @@
+# CodeQuest Frontend
+
+The frontend of the StemConnect web app, a platform designed to provide interactive STEM education for kids.
+
+## Key Technologies
+- React
+- Redux
+- CSS/SCSS
+- JavaScript
+
+## Development Setup
+- Clone the repo
+- Run `npm install` to install dependencies
+- Run `npm start` to start the local development server
+
+## Contribution Guidelines
+- Branch from `main` for feature development
+- Create PRs with detailed descriptions
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
