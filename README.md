@@ -1,6 +1,6 @@
 # CodeQuest Frontend
 
-The frontend of the StemConnect web app, a platform designed to provide interactive STEM education for kids.
+The frontend of the CodeQuest web app, a platform designed to provide interactive STEM education for kids.
 
 ## Key Technologies
 - React
