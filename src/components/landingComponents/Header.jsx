@@ -37,10 +37,7 @@ function Header() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (
-        coursesDropdownRef.current &&
-        !coursesDropdownRef.current.contains(event.target)
-      ) {
+      if (coursesDropdownRef.current && !coursesDropdownRef.current.contains(event.target)) {
         setIsCoursesOpen(false);
       }
     }
@@ -79,7 +76,10 @@ function Header() {
   };
 
   return (
-    <motion.header {...headerAnimations.header} className={headerStyles.header}>
+    <motion.header
+      {...headerAnimations.header}
+      className={headerStyles.header}
+    >
       <div className={headerStyles.container}>
         <div className={headerStyles.logoContainer}>
           <Link to="/" className={headerStyles.logoLink}>
@@ -105,9 +105,7 @@ function Header() {
                   <Link
                     to={item.path}
                     onClick={handleCoursesToggle}
-                    className={`${headerStyles.navLink} ${
-                      item.isHighlighted ? headerStyles.navLinkHighlighted : ""
-                    }`}
+                    className={`${headerStyles.navLink} ${item.isHighlighted ? headerStyles.navLinkHighlighted : ''}`}
                   >
                     <span className={headerStyles.navLinkContent}>
                       {item.name} <MdKeyboardArrowDown />
@@ -121,10 +119,7 @@ function Header() {
                       className={headerStyles.dropdownMenu}
                     >
                       {courseItems.map((course) => (
-                        <li
-                          key={course.name}
-                          className={headerStyles.dropdownItem}
-                        >
+                        <li key={course.name} className={headerStyles.dropdownItem}>
                           <Link
                             to={course.path}
                             className={headerStyles.dropdownLink}
@@ -134,9 +129,7 @@ function Header() {
                             <span className={headerStyles.dropdownLinkText}>
                               {course.name}
                             </span>
-                            <span
-                              className={headerStyles.dropdownHoverEffect}
-                            ></span>
+                            <span className={headerStyles.dropdownHoverEffect}></span>
                           </Link>
                         </li>
                       ))}
@@ -146,9 +139,7 @@ function Header() {
               ) : (
                 <Link
                   to={item.path}
-                  className={`${headerStyles.navLink} ${
-                    item.isHighlighted ? headerStyles.navLinkHighlighted : ""
-                  }`}
+                  className={`${headerStyles.navLink} ${item.isHighlighted ? headerStyles.navLinkHighlighted : ''}`}
                 >
                   <span className={headerStyles.navLinkContent}>
                     {item.name}
@@ -218,9 +209,7 @@ function Header() {
                               to={course.path}
                               className={headerStyles.mobileDropdownLink}
                             >
-                              <span
-                                className={headerStyles.mobileDropdownLinkText}
-                              >
+                              <span className={headerStyles.mobileDropdownLinkText}>
                                 {course.name}
                               </span>
                               <span className={headerStyles.hoverEffect}></span>
