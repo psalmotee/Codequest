@@ -8,7 +8,7 @@ import NewsletterSection from "../components/landingComponents/NewsletterSection
 import EnrollSection from "../components/landingComponents/EnrollSection";
 import Footer from "../components/landingComponents/Footer";
 
-function landingComponentsPage() {
+function landingPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -24,4 +24,4 @@ function landingComponentsPage() {
   );
 }
 
-export default landingComponentsPage;
+export default landingPage;
