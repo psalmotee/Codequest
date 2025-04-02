@@ -31,7 +31,7 @@ export const headerAnimations = {
 };
 
 export const headerStyles = {
-  header: `fixed top-0 left-0 w-full z-50 bg-[#FF8721] overflow-x-hidden`,
+  header: `fixed top-0 left-0 w-full z-50 bg-[#FF8721]`,
   container: `container px-4 mx-auto flex items-center justify-between`,
   logoContainer: `flex items-center w-1/2 md:w-1/4 lg:w-1/5`,
   logoLink: `flex items-center`,
@@ -70,9 +70,7 @@ export const heroAnimations = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
   button: {
-    initial: { opacity: 0, scale: 0.9 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, delay: 0.6 },
+    whileHover: { scale: 1.05 },
   },
   imageSection: {
     initial: { opacity: 0, x: 50 },
@@ -82,16 +80,17 @@ export const heroAnimations = {
 };
 
 export const heroStyles = {
-  section: `relative min-h-screen w-full overflow-x-hidden py-20 md:py-0`,
+  section: `py-16 px-8 relative overflow-hidden mt-5 md:mt-20 lg:mt-40`,
   container: `container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12`,
-  contentContainer: `w-full md:w-1/2 text-center md:text-left relative z-10`,
-  heading: `text-3xl md:text-4xl font-bold leading-tight`,
-  description: `text-gray-700 text-base md:text-lg mt-4 mb-6`,
+  contentContainer: `w-full max-w-md text-center md:text-left relative z-10`,
+  headingContainer: `min-h-[160px] md:min-h-[130px] lg:min-h-[100px] flex items-center overflow-hidden`,
+  heading: `text-3xl md:text-4xl font-bold leading-[1.2] inline-block`,
+  description: `text-gray-700 text-lg mb-8`,
   button: `relative overflow-hidden bg-[#2d2dff] text-white font-bold py-3 px-6 rounded-[10px] shadow-md transition duration-300 group`,
-  buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-300 group-hover:w-full`,
+  buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
-  imageContainer: `w-full md:w-1/2 relative`,
-  image: `w-full h-full object-cover rounded-lg shadow-xl`,
+  imageContainer: `w-full max-w-2xl md:h-60 lg:h-90 relative w-full  relative transition-transform duration-500 transform hover:scale-105`,
+  image: `w-full h-full object-cover rounded-[256px] shadow-xl`,
 };
 
 export const featureAnimations = {
@@ -197,7 +196,7 @@ export const parentsAnimations = {
 };
 
 export const parentsStyles = {
-  section: `py-12 md:py-20 overflow-x-hidden`,
+  section: `md:py-2 overflow-x-hidden`,
   container: `container mx-auto px-4`,
   wrapper: `bg-[#f1f1f1] shadow-xl rounded-lg px-4 md:px-16 py-12 gap-8 md:gap-20 flex flex-col lg:flex-row max-w-7xl mx-auto`,
   imageContainer: `flex-1 lg:basis-1/2 order-first lg:order-last`,
@@ -292,9 +291,9 @@ export const newsletterStyles = {
   label: `text-md text-[#2D2DFF] font-bold`,
   heading: `text-xl md:text-2xl font-bold text-gray-900 mt-2`,
   description: `text-gray-600 mt-2 text-sm md:text-md max-w-2xl mx-auto`,
-  formWrapper: `mt-6 flex justify-center w-full md:w-3/4 lg:w-1/2 mx-auto px-4`,
-  formContainer: `flex w-full max-w-md`,
-  input: `p-3 flex-grow bg-white border border-[#2D2DFF] rounded-l-md focus:outline-none focus:border-[#2D2DFF]/50 hover:border-[#1212d6] transition duration-300`,
+  formWrapper: `mt-6 flex justify-center w-full  md:w-3/4 lg:w-1/2 mx-auto px-4`,
+  formContainer: `flex w-full max-w-sm`,
+  input: `p-3 flex-grow bg-white border border-[#2D2DFF] w-2/3 rounded-l-md focus:outline-none focus:border-[#2D2DFF]/50 hover:border-[#1212d6] transition duration-300`,
   button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold px-5 py-3 rounded-r-md transition duration-300 group whitespace-nowrap`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
@@ -307,14 +306,14 @@ export const enrollAnimations = {
     transition: { delay: 0.3, duration: 0.6 },
   },
   button: {
-    initial: { opacity: 0, scale: 0.9 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { delay: 0.5, duration: 0.4 },
+    
+    whileHover: { scale: 1.05 },
+    
   },
 };
 
 export const enrollStyles = {
-  section: `py-16 mt-12 text-center`,
+  section: `py-16 md:py-30 md:mt-12 text-center`,
   container: `container mx-auto px-4`,
   heading: `text-3xl text-[#2D2DFF] font-bold mb-6`,
   button: `relative inline-block px-6 py-2 font-bold text-white rounded-[10px] shadow-md bg-[#2d2dff] overflow-hidden group transition duration-300`,

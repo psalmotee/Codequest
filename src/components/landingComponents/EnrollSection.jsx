@@ -24,8 +24,13 @@ function EnrollSection() {
           initial={enrollAnimations.button.initial}
           animate={isInView ? enrollAnimations.button.animate : {}}
           transition={enrollAnimations.button.transition}
-        >
-          <Link to="/select-account" className={enrollStyles.button}>
+          whileHover={enrollAnimations.button.whileHover}
+        
+          >
+          <Link
+            to="/select-account"
+            className={enrollStyles.button}
+          >
             <span className={enrollStyles.buttonHover}></span>
             <span className={enrollStyles.buttonText}>Enroll here</span>
           </Link>
