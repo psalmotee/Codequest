@@ -4,16 +4,21 @@ import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { footerAnimations, footerStyles } from "../../assets/styles/animations";
+import { footerStyles } from "../../assets/styles/styles";
+import { footerAnimations } from "../../assets/animations/animations";
 import decorativeFooter from "../../assets/images/decorative-footer.png";
 import logoFooter from "../../assets/images/logo-footer.png";
 
 function Footer() {
+  // Create a reference to the footer element
   const ref = useRef(null);
+
+  // Check if the footer is in view using framer-motion's useInView hook
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.3 });
 
   return (
-    <footer ref={ref} className={footerStyles.footer}>
+    <footer ref={ref} className={footerStyles.footer} id="footer">
+      {/* Decorative footer image */}
       <div className={footerStyles.decorativeContainer}>
         <motion.img
           src={decorativeFooter}
@@ -25,6 +30,8 @@ function Footer() {
           transition={footerAnimations.decorative.transition}
         />
       </div>
+
+      {/* Main footer content */}
       <div className={footerStyles.mainContainer}>
         <div className={footerStyles.innerContainer}>
           <motion.div
@@ -33,6 +40,7 @@ function Footer() {
             animate={isInView ? footerAnimations.container.animate : {}}
             transition={footerAnimations.container.transition}
           >
+            {/* Logo section */}
             <div className={footerStyles.section}>
               <motion.img
                 src={logoFooter}
@@ -42,6 +50,7 @@ function Footer() {
               />
             </div>
 
+            {/* Social media links section */}
             <div className={footerStyles.section}>
               <h3 className={footerStyles.sectionTitle}>Follow Us</h3>
               <div className={footerStyles.socialContainer}>
@@ -61,6 +70,7 @@ function Footer() {
               </div>
             </div>
 
+            {/* Useful links section */}
             <div className={footerStyles.section}>
               <h3 className={footerStyles.sectionTitle}>Useful Links</h3>
               <ul className={footerStyles.linksList}>
@@ -77,6 +87,7 @@ function Footer() {
               </ul>
             </div>
 
+            {/* Contact section */}
             <div className={footerStyles.section}>
               <h3 className={footerStyles.sectionTitle}>Contact</h3>
               <p className="text-sm">
@@ -92,6 +103,7 @@ function Footer() {
             </div>
           </motion.div>
 
+          {/* Copyright section */}
           <div className={footerStyles.copyright}>
             CodeQuest &copy; {new Date().getFullYear()}, All Right Reserved.
           </div>

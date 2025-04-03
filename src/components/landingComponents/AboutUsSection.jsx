@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { aboutAnimations, aboutStyles } from "../../assets/styles/animations";
+import { aboutStyles } from "../../assets/styles/styles";
+import { aboutAnimations } from "../../assets/animations/animations";
 import aboutUsImg from "../../assets/images/AboutUs-img.png";
 
+// AboutUsSection component: Displays the "About Us" section of the landing page
 function AboutUsSection() {
   return (
-    <section className={aboutStyles.section}>
+    <section className={aboutStyles.section} id="aboutus">
       <div className={aboutStyles.container}>
+        {/* Main container with animation */}
         <motion.div
           initial={aboutAnimations.container.initial}
           whileInView={aboutAnimations.container.animate}
@@ -20,6 +23,7 @@ function AboutUsSection() {
             transition={aboutAnimations.imageSection.transition}
             className={aboutStyles.imageContainer}
           >
+            {/* About Us Image */}
             <motion.img
               src={aboutUsImg}
               alt="Kids learning to code"
@@ -29,13 +33,14 @@ function AboutUsSection() {
             />
           </motion.div>
 
-          {/* Text Content */}
+          {/* Text Content Section */}
           <motion.div
             initial={aboutAnimations.textContent.initial}
             whileInView={aboutAnimations.textContent.animate}
             transition={aboutAnimations.textContent.transition}
             className={aboutStyles.contentContainer}
           >
+            {/* Label Section */}
             <motion.div
               initial={aboutAnimations.label.initial}
               whileInView={aboutAnimations.label.animate}
@@ -45,12 +50,14 @@ function AboutUsSection() {
               <span className={aboutStyles.label}>About Us</span>
             </motion.div>
 
+            {/* Heading */}
             <h2 className={aboutStyles.heading}>
               CodeQuest is an interactive, kid-friendly platform where young
               learners can dive into the world of coding, robotics, math, and
               more.
             </h2>
 
+            {/* Paragraph 1 */}
             <p className={aboutStyles.paragraph}>
               At CodeQuest, we're on a mission to make learning coding and STEM
               subjects as fun and exciting as possible! Our platform is designed
@@ -59,12 +66,14 @@ function AboutUsSection() {
               Math.
             </p>
 
+            {/* Paragraph 2 */}
             <p className={aboutStyles.paragraph}>
               Imagine a place where coding feels like an epic adventure, where
               problem-solving is a treasure hunt, and every lesson brings new
               opportunities for creativity and discovery. That's CodeQuest.
             </p>
 
+            {/* Join Us Button */}
             <motion.button
               whileHover={aboutAnimations.button.whileHover}
               className={aboutStyles.button}

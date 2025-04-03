@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { parentsAnimations, parentsStyles } from "../../assets/styles/animations";
+import { parentsStyles } from "../../assets/styles/styles";
+import { parentsAnimations } from "../../assets/animations/animations";
 import parentImg from "../../assets/images/parent-img.png";
 
+// Component for the "Parents Section" of the landing page
 function ParentsSection() {
   return (
     <section className={parentsStyles.section}>
       <div className={parentsStyles.container}>
+        {/* Main container with animations */}
         <motion.div
           initial={parentsAnimations.container.initial}
           whileInView={parentsAnimations.container.animate}
@@ -13,13 +16,14 @@ function ParentsSection() {
           transition={parentsAnimations.container.transition}
           className={parentsStyles.wrapper}
         >
-          {/* Text Content */}
+          {/* Text Content Section */}
           <motion.div
             initial={parentsAnimations.textContent.initial}
             whileInView={parentsAnimations.textContent.animate}
             transition={parentsAnimations.textContent.transition}
             className={parentsStyles.contentContainer}
           >
+            {/* Label for the section */}
             <motion.div
               initial={parentsAnimations.label.initial}
               whileInView={parentsAnimations.label.animate}
@@ -29,12 +33,14 @@ function ParentsSection() {
               <span className={parentsStyles.label}>For Parents</span>
             </motion.div>
 
+            {/* Heading for the section */}
             <h2 className={parentsStyles.heading}>
               We know that parents want the best for their children's education,
               and CodeQuest offers a safe, secure, and educational environment
               where kids can explore and learn.
             </h2>
 
+            {/* List of benefits for parents */}
             <ul className={parentsStyles.list}>
               <li>
                 <span className={parentsStyles.listItemBold}>
@@ -70,6 +76,7 @@ function ParentsSection() {
               </li>
             </ul>
 
+            {/* Button to read more */}
             <motion.button
               whileHover={parentsAnimations.button.whileHover}
               className={parentsStyles.button}
@@ -86,6 +93,7 @@ function ParentsSection() {
             transition={parentsAnimations.imageSection.transition}
             className={parentsStyles.imageContainer}
           >
+            {/* Image with hover animation */}
             <motion.img
               src={parentImg}
               alt="Parent and child learning together"
