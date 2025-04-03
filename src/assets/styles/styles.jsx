@@ -38,7 +38,7 @@ export const heroStyles = {
   headingContainer: `min-h-[160px] md:min-h-[130px] lg:min-h-[100px] flex items-center overflow-hidden`,
   heading: `text-3xl md:text-4xl font-bold leading-[1.2] inline-block`,
   description: `text-gray-700 text-lg mb-8`,
-  button: `relative overflow-hidden bg-[#2d2dff] text-white font-semibold py-1 px-3 rounded-md shadow-md transition duration-300 group`,
+  button: `relative overflow-hidden bg-[#2d2dff] text-white font-semibold py-1 px-3 rounded-md shadow-md transition duration-300 cursor-pointer group`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
   imageContainer: `w-full max-w-2xl md:h-60 lg:h-90 relative w-full  relative transition-transform duration-500 transform hover:scale-105`,
@@ -69,7 +69,7 @@ export const aboutStyles = {
   label: `text-[#2D2DFF] text-sm font-medium`,
   heading: `text-xl md:text-2xl font-semibold text-gray-900`,
   paragraph: `text-base text-gray-600`,
-  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md shadow-md transition duration-300 w-25 group`,
+  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md shadow-md transition duration-300 w-25 cursor-pointer group`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
 };
@@ -85,7 +85,7 @@ export const parentsStyles = {
   heading: `text-xl md:text-2xl font-semibold text-gray-900`,
   list: `text-gray-600 mt-4 space-y-4 text-sm md:text-base`,
   listItemBold: `font-bold`,
-  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md  shadow-md transition duration-300 w-30 group`,
+  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md  shadow-md transition duration-300 w-30 cursor-pointer group`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
 };
@@ -100,7 +100,7 @@ export const teachersStyles = {
   label: `text-[#2D2DFF] text-sm font-medium`,
   heading: `text-xl md:text-2xl font-semibold text-gray-900`,
   paragraph: `text-base text-gray-600`,
-  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md  shadow-md transition duration-300 w-55 group`,
+  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-md  shadow-md transition duration-300 w-55 cursor-pointer group`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
 };
@@ -114,7 +114,7 @@ export const newsletterStyles = {
   formWrapper: `mt-6 flex justify-center w-full  md:w-3/4 lg:w-1/2 mx-auto px-4`,
   formContainer: `flex w-full max-w-sm`,
   input: `p-2 flex-grow bg-white border border-[#2D2DFF] w-2/3 rounded-l-md focus:outline-none focus:border-[#2D2DFF]/50 hover:border-[#1212d6] transition duration-300`,
-  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-r-md transition duration-300 group whitespace-nowrap`,
+  button: `relative overflow-hidden bg-[#2D2DFF] text-white font-semibold py-1 px-3 rounded-r-md transition duration-300 cursor-pointer group whitespace-nowrap`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
 };
@@ -123,7 +123,7 @@ export const enrollStyles = {
   section: `py-16 md:py-30 md:mt-12 text-center`,
   container: `container mx-auto px-4`,
   heading: `text-3xl text-[#2D2DFF] font-bold mb-6`,
-  button: `relative inline-block font-semibold text-white py-1 px-3 rounded-md  shadow-md bg-[#2d2dff] overflow-hidden group transition duration-300`,
+  button: `relative inline-block font-semibold text-white py-1 px-3 rounded-md  shadow-md bg-[#2d2dff] overflow-hidden group transition duration-300 cursor-pointer`,
   buttonHover: `absolute inset-0 bg-[#1212d6] w-0 transition-all duration-500 ease-out group-hover:w-full`,
   buttonText: `relative z-10`,
 };
