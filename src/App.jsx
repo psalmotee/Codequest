@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
+import { HashRouter as Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import SelectAccount from "./pages/Selectaccount";
 import SignUp from "./pages/signUp";
