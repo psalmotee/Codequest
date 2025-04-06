@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { heroStyles } from "../../assets/styles/styles";
 import { heroAnimations } from "../../assets/animations/animations";
@@ -29,7 +30,13 @@ function HeroSection() {
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [images.length]);
+  // Hook to get the navigate function
+  const navigate = useNavigate();
 
+  // Function to handle the register button click
+  const registerButton = () => {
+    navigate("/select-account"); // Navigate to the Select Account page
+  };
   return (
     <section ref={ref} className={heroStyles.section}>
       <div className={heroStyles.container}>
@@ -66,7 +73,7 @@ function HeroSection() {
             <motion.button
               whileHover={heroAnimations.button.whileHover}
               className={heroStyles.button}
-              onClick={() => (window.location.href = "/select-account")}
+              onClick={registerButton}
             >
               <span className={heroStyles.buttonText}>Register Now</span>
               <span className={heroStyles.buttonHover}></span>

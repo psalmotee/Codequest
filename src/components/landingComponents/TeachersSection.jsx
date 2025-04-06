@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { teachersStyles } from "../../assets/styles/styles";
 import { teachersAnimations } from "../../assets/animations/animations";
 import teacherImg from "../../assets/images/teacher-img.png";
 
-// TeachersSection component: Displays a section targeted at teachers, showcasing the benefits of using CodeQuest.
 function TeachersSection() {
+  //  Teach With CodeQuest Button function: Handles navigation to the Select Account page
+  const TeachWithCodeQuestButton = () => {
+    const navigate = useNavigate();
+    navigate("/select-account"); // Navigate to the Select Account page
+  };
+
+  // TeachersSection component: Displays a section targeted at teachers, showcasing the benefits of using CodeQuest.
   return (
     <section className={teachersStyles.section}>
       <div className={teachersStyles.container}>
@@ -74,7 +81,7 @@ function TeachersSection() {
             <motion.button
               whileHover={teachersAnimations.button.whileHover}
               className={teachersStyles.button}
-              onClick={() => (window.location.href = "/select-account")}
+              onClick={TeachWithCodeQuestButton}
             >
               <span className={teachersStyles.buttonHover}></span>
               <span className={teachersStyles.buttonText}>

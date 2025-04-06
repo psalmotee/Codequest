@@ -2,9 +2,17 @@ import { motion } from "framer-motion";
 import { aboutStyles } from "../../assets/styles/styles";
 import { aboutAnimations } from "../../assets/animations/animations";
 import aboutUsImg from "../../assets/images/AboutUs-img.png";
+import { useNavigate } from "react-router-dom";
+
+function AboutUsSection() {
+  
+// JoinUsButton function: Handles navigation to the Select Account page
+const joinUsButton = (navigate) => {
+  navigate("/select-account"); // Navigate to the Select Account page
+};
 
 // AboutUsSection component: Displays the "About Us" section of the landing page
-function AboutUsSection() {
+  const navigate = useNavigate();
   return (
     <section className={aboutStyles.section} id="aboutus">
       <div className={aboutStyles.container}>
@@ -76,8 +84,7 @@ function AboutUsSection() {
             {/* Join Us Button */}
             <motion.button
               whileHover={aboutAnimations.button.whileHover}
-              className={aboutStyles.button}
-              onClick={() => (window.location.href = "/select-account")}
+              onClick={() => joinUsButton(navigate)}
             >
               <span className={aboutStyles.buttonHover}></span>
               <span className={aboutStyles.buttonText}>Join Us</span>
