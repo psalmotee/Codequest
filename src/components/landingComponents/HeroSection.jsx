@@ -9,38 +9,39 @@ import aboutUsImg from "../../assets/images/AboutUs-img.png";
 import teacherImg from "../../assets/images/teacher-img.png";
 import parentImg from "../../assets/images/parent-img.png";
 
-function HeroSection() {
-  // State to track the current image index for the slideshow
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+// State to track the current image index for the slideshow
+const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images to be used in the slideshow
+// Array of images to be used in the slideshow
   const images = [heroImg, aboutUsImg, teacherImg, parentImg];
-
+  
   // Ref to track the visibility of the section
   const ref = useRef(null);
 
   // Hook to determine if the section is in view
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.3 });
-
+  
   // Effect to handle automatic image slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 2000); // Change image every 2 seconds
-
+    
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [images.length]);
-  // Hook to get the navigate function
-  const navigate = useNavigate();
-
-  // Function to handle the register button click
-  const registerButton = () => {
-    navigate("/select-account"); // Navigate to the Select Account page
-  };
+  
+// Function to handle the register button click
+const registerButton = (navigate) => {
+  navigate("/select-account"); // Navigate to the Select Account page
+};
+  
+  function HeroSection() {
   return (
     <section ref={ref} className={heroStyles.section}>
       <div className={heroStyles.container}>
-        {/* Animated text content */}
+  const navigate = useNavigate(); // Hook to get the navigate function
+
+  return (
         <motion.div
           initial={heroAnimations.textContent.initial}
           animate={isInView ? heroAnimations.textContent.animate : {}}
@@ -73,8 +74,8 @@ function HeroSection() {
             <motion.button
               whileHover={heroAnimations.button.whileHover}
               className={heroStyles.button}
-              onClick={registerButton}
-            >
+              // onClick={registerButton}
+              onClick={() => registerButton(navigate)}>
               <span className={heroStyles.buttonText}>Register Now</span>
               <span className={heroStyles.buttonHover}></span>
             </motion.button>
