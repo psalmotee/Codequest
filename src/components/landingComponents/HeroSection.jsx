@@ -66,7 +66,7 @@ function HeroSection() {
             <motion.button
               whileHover={heroAnimations.button.whileHover}
               className={heroStyles.button}
-              onClick={() => (window.location.href = "/signup")}
+              onClick={() => (window.location.href = "/select-account")}
             >
               <span className={heroStyles.buttonText}>Register Now</span>
               <span className={heroStyles.buttonHover}></span>

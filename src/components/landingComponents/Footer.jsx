@@ -97,7 +97,7 @@ function Footer() {
                   className={footerStyles.emailLink}
                 >
                   {" "}
-                  Codequest@gmail.com
+                  CodeQuest@gmail.com
                 </a>
               </p>
             </div>

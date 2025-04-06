@@ -74,6 +74,7 @@ function TeachersSection() {
             <motion.button
               whileHover={teachersAnimations.button.whileHover}
               className={teachersStyles.button}
+              onClick={() => (window.location.href = "/select-account")}
             >
               <span className={teachersStyles.buttonHover}></span>
               <span className={teachersStyles.buttonText}>

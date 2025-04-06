@@ -1,34 +1,40 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { toast } from "react-toastify";
-import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
-import Illustration from "../assets/images/SignupImage.png";
-import GoogleLogo from "../assets/images/GoogleImage.png";
-import { signStyles, signBtnStyles } from "../assets/styles/styles";
-import { signupAnimations } from "../assets/animations/animations";
+import Illustration from "../assets/images/SigninImage.png";
+import GoogleImage from "../assets/images/GoogleImage.png";
+import { motion, useInView } from "framer-motion";
+import { signStyles, signinStyles, signBtnStyles } from "../assets/styles/styles";
+import { signinAnimations } from "../assets/animations/animations";
 
-const Signup = () => {
-  const navigate = useNavigate();
+const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
+
+  const illustrationRef = useRef(null);
+  const formRef = useRef(null);
+  const isIllustrationInView = useInView(illustrationRef, {
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+  const isFormInView = useInView(formRef, {
+    triggerOnce: true,
+    threshold: 0.3,
+  });
 
   const validateForm = () => {
     let newErrors = {};
-    if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Enter a valid email";
     }
-    if (formData.password.length < 6)
+    if (formData.password.length < 6) {
       newErrors.password = "Password must be at least 6 characters";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -45,24 +51,27 @@ const Signup = () => {
       return;
     }
 
-    toast.success("Signup successful! 🎉 Redirecting to verify email...", {
+    console.log("Sign-in successful", formData);
+
+    toast.success("Sign-in successful! 🎉", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       theme: "colored",
     });
-
-    setTimeout(() => {
-      navigate("/verify-email", { state: { email: formData.email } });
-    }, 2000);
   };
 
   return (
     <div className={signStyles.container}>
       {/* Left Side - Illustration */}
       <motion.div
+        ref={illustrationRef}
         className={signStyles.illustrationContainer}
-        {...signupAnimations.illustration}
+        initial={signinAnimations.illustration.initial}
+        animate={
+          isIllustrationInView ? signinAnimations.illustration.animate : {}
+        }
+        transition={signinAnimations.illustration.transition}
       >
         <img
           src={Illustration}
@@ -71,46 +80,32 @@ const Signup = () => {
         />
       </motion.div>
 
-      {/* Right Side - Signup Form */}
+      {/* Right Side - Sign-In Form */}
       <motion.div
+        ref={formRef}
         className={signStyles.formContainer}
-        {...signupAnimations.formContainer}
+        initial={signinAnimations.formContainer.initial}
+        animate={isFormInView ? signinAnimations.formContainer.animate : {}}
+        transition={signinAnimations.formContainer.transition}
       >
-        <motion.h2 className={signStyles.heading} {...signupAnimations.heading}>
-          Welcome to the fun!
+        <motion.h2
+          className={signStyles.heading}
+          initial={signinAnimations.heading.initial}
+          animate={isFormInView ? signinAnimations.heading.animate : {}}
+          transition={signinAnimations.heading.transition}
+        >
+          Welcome back, champ!
         </motion.h2>
-
         <motion.p
           className={signStyles.subHeading}
-          {...signupAnimations.subHeading}
+          initial={signinAnimations.subHeading.initial}
+          animate={isFormInView ? signinAnimations.subHeading.animate : {}}
+          transition={signinAnimations.subHeading.transition}
         >
-          Let's get started and have an awesome time.
+          Let's get back to the adventure!
         </motion.p>
 
-        <motion.form
-          className={signStyles.form}
-          onSubmit={handleSubmit}
-          {...signupAnimations.form}
-        >
-          {/* Full Name */}
-          <div className={signStyles.inputGroup}>
-            <label className={signStyles.label}>Full Name</label>
-            <input
-              type="text"
-              placeholder="Enter your full name"
-              className={signStyles.input}
-              autoComplete="name"
-              value={formData.fullName}
-              onChange={(e) =>
-                setFormData({ ...formData, fullName: e.target.value })
-              }
-            />
-            {errors.fullName && (
-              <p className={signStyles.errorText}>{errors.fullName}</p>
-            )}
-          </div>
-
-          {/* Email */}
+        <form className={signStyles.form} onSubmit={handleSubmit}>
           <div className={signStyles.inputGroup}>
             <label className={signStyles.label}>Email</label>
             <input
@@ -128,7 +123,6 @@ const Signup = () => {
             )}
           </div>
 
-          {/* Password */}
           <div className={signStyles.inputGroup}>
             <label className={signStyles.label}>Password</label>
             <div className={signStyles.passwordContainer}>
@@ -136,7 +130,7 @@ const Signup = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="******"
                 className={signStyles.passwordInput}
-                autoComplete="new-password"
+                autoComplete="current-password"
                 value={formData.password}
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
@@ -155,38 +149,47 @@ const Signup = () => {
             )}
           </div>
 
-          {/* Signup Button */}
+          <div className={signinStyles.rememberMeContainer}>
+            <label className={signinStyles.rememberMeLabel}>
+              <input type="checkbox" className={signinStyles.checkbox} />
+              Remember me
+            </label>
+            <Link to="/forgot-password" className={signinStyles.forgotPassword}>
+              Forgot Password?
+            </Link>
+          </div>
+
           <motion.button
             type="submit"
             className={signBtnStyles.button}
-            {...signupAnimations.button}
+            {...signinAnimations.button}
           >
-            <span className={signBtnStyles.buttonText}>Sign Up</span>
+            <span className={signBtnStyles.buttonText}>Sign In</span>
             <span className={signBtnStyles.buttonHover}></span>
           </motion.button>
 
-          {/* Google Signup Button */}
           <motion.button
             className={signStyles.googleButton}
-            {...signupAnimations.button}
+            {...signinAnimations.button}
           >
             <img
-              src={GoogleLogo}
+              src={GoogleImage}
               alt="Google"
               className={signStyles.googleLogo}
             />
-            Sign up with Google
+            Sign in with Google
           </motion.button>
-        </motion.form>
+        </form>
 
-        {/* Already have an account? */}
         <motion.p
           className={signStyles.signText}
-          {...signupAnimations.signInText}
+          initial={signinAnimations.signupText.initial}
+          animate={isFormInView ? signinAnimations.signupText.animate : {}}
+          transition={signinAnimations.signupText.transition}
         >
-          Already have an account?{" "}
-          <Link to="/signin" className={signStyles.signLink}>
-            Sign In
+          Don't have an account?{" "}
+          <Link to="/select-account" className={signStyles.signLink}>
+            Sign Up
           </Link>
         </motion.p>
       </motion.div>
@@ -194,4 +197,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignIn;

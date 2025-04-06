@@ -26,7 +26,7 @@ function EnrollSection() {
         </motion.h2>
         <motion.div
           initial={enrollAnimations.button.initial} 
-          animate={isInView ? enrollAnimations.button.animate : {}} button
+          animate={isInView ? enrollAnimations.button.animate : {}}
           whileHover={enrollAnimations.button.whileHover}
         >
           <Link

@@ -24,7 +24,7 @@ function Header() {
     { name: "Home", path: "/" },
     { name: "Courses", path: "/courses", hasDropdown: true },
     { name: "About us", path: "/#aboutus" },
-    { name: "Login", path: "/login" },
+    { name: "Login", path: "/signin" },
     { name: "Contact Us", path: "/#footer", isHighlighted: true },
   ];
 

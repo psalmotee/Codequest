@@ -80,7 +80,10 @@ function ParentsSection() {
             <motion.button
               whileHover={parentsAnimations.button.whileHover}
               className={parentsStyles.button}
+              onClick={() => (window.location.href = "/parents")}
             >
+              {/* Button hover effect and text */}  
+            
               <span className={parentsStyles.buttonHover}></span>
               <span className={parentsStyles.buttonText}>Read More</span>
             </motion.button>

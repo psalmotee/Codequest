@@ -77,6 +77,7 @@ function AboutUsSection() {
             <motion.button
               whileHover={aboutAnimations.button.whileHover}
               className={aboutStyles.button}
+              onClick={() => (window.location.href = "/select-account")}
             >
               <span className={aboutStyles.buttonHover}></span>
               <span className={aboutStyles.buttonText}>Join Us</span>
