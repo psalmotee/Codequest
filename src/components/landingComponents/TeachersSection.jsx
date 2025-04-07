@@ -6,8 +6,11 @@ import teacherImg from "../../assets/images/teacher-img.png";
 
 function TeachersSection() {
   //  Teach With CodeQuest Button function: Handles navigation to the Select Account page
-  const TeachWithCodeQuestButton = () => {
-    const navigate = useNavigate();
+  // Hook to get the navigate function
+  const navigate = useNavigate();
+
+  // Function to handle the register button click
+  const teachWithCodeQuestButton = () => {
     navigate("/select-account"); // Navigate to the Select Account page
   };
 
@@ -81,7 +84,7 @@ function TeachersSection() {
             <motion.button
               whileHover={teachersAnimations.button.whileHover}
               className={teachersStyles.button}
-              onClick={TeachWithCodeQuestButton}
+              onClick={teachWithCodeQuestButton}
             >
               <span className={teachersStyles.buttonHover}></span>
               <span className={teachersStyles.buttonText}>

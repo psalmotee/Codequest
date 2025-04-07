@@ -5,14 +5,15 @@ import aboutUsImg from "../../assets/images/AboutUs-img.png";
 import { useNavigate } from "react-router-dom";
 
 function AboutUsSection() {
-  
-// JoinUsButton function: Handles navigation to the Select Account page
-const joinUsButton = (navigate) => {
-  navigate("/select-account"); // Navigate to the Select Account page
-};
-
-// AboutUsSection component: Displays the "About Us" section of the landing page
+  // JoinUsButton function: Handles navigation to the Select Account page
+  // Hook to get the navigate function
   const navigate = useNavigate();
+
+  // Function to handle the register button click
+  const joinUsButton = () => {
+    navigate("/select-account"); // Navigate to the Select Account page
+  };
+
   return (
     <section className={aboutStyles.section} id="aboutus">
       <div className={aboutStyles.container}>
@@ -84,7 +85,8 @@ const joinUsButton = (navigate) => {
             {/* Join Us Button */}
             <motion.button
               whileHover={aboutAnimations.button.whileHover}
-              onClick={() => joinUsButton(navigate)}
+              className={aboutStyles.button}
+              onClick={joinUsButton}
             >
               <span className={aboutStyles.buttonHover}></span>
               <span className={aboutStyles.buttonText}>Join Us</span>
