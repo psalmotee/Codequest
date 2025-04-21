@@ -8,6 +8,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import VerifyEmail from "./pages/VerifyEmail";
+import StudentDashboard from "./pages/StudentDashboard";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        {/* Add more routes as needed */}
       </Routes>
     </>
   );

@@ -6,7 +6,7 @@ import BookOpenText from "../../assets/icons/BookOpenText.svg";
 import Exam from "../../assets/icons/Exam.svg";
 import FirstAid from "../../assets/icons/FirstAid.svg";
 import IdentificationBadge from "../../assets/icons/IdentificationBadge.svg";
-import decorativeLightOrange from "../../assets/images/decorative-light-orange.png";
+import decorativeLightOrange from "/images/decorative-light-orange.png";
 
 function FeaturesSection() {
   // Create a reference to the section element

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import emailIllustration from "../assets/images/VerifyEmailImage.png";
+import emailIllustration from "/images/VerifyEmailImage.png";
 import { verifyEmailStyles } from "../assets/styles/styles";
 import { verifyEmailAnimations } from "../assets/animations/animations";
 
