@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { teachersStyles } from "../../assets/styles/styles";
 import { teachersAnimations } from "../../assets/animations/animations";
-import teacherImg from "../../assets/images/teacher-img.png";
+import teacherImg from "/images/teacher-img.png";
 
 // TeachersSection component: Displays a section targeted at teachers, showcasing the benefits of using CodeQuest.
 function TeachersSection() {

@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { forgotPasswordStyles } from "../assets/styles/styles";
-import forgotPasswordIllustration from "../assets/images/ForgotPasswordImage.png";
+import forgotPasswordIllustration from "/images/ForgotPasswordImage.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },

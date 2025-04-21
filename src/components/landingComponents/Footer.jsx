@@ -6,8 +6,8 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { footerStyles } from "../../assets/styles/styles";
 import { footerAnimations } from "../../assets/animations/animations";
-import decorativeFooter from "../../assets/images/decorative-footer.png";
-import logoFooter from "../../assets/images/logo-footer.png";
+import decorativeFooter from "/images/decorative-footer.png";
+import logoFooter from "/images/logo-footer.png";
 
 function Footer() {
   // Create a reference to the footer element

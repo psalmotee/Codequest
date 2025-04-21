@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import Illustration from "../assets/images/SelectAccountImage.png";
+import Illustration from "/images/SelectAccountImage.png";
 
 const SelectAccount = () => {
   const navigate = useNavigate();
