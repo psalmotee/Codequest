@@ -103,6 +103,10 @@ export const featureAnimations = {
     animate: fadeInUpAnimation,
     transition: { duration: 0.6, delay: index * 0.2 },
   }),
+  slide: {
+    animate: { x: ["0%", "-30%", "0%"] },
+    transition: { repeat: Infinity, duration: 100, ease: "linear" },
+  },
 };
 
 export const aboutAnimations = {
@@ -314,7 +318,6 @@ export const signinAnimations = {
   },
 };
 
-
 export const verifyEmailAnimations = {
   illustration: {
     initial: { opacity: 0, y: -20 },
@@ -365,5 +368,72 @@ export const forgotPasswordAnimations = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.9, ease: "easeOut", delay: 0.2 },
+  },
+};
+
+// Onboarding page animations
+export const onboardingAnimations = {
+  container: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.5 },
+  },
+  leftContent: {
+    initial: { opacity: 0, x: -40 },
+    animate: fadeInLeftAnimation,
+    transition: { duration: 0.8 },
+  },
+  rightContent: {
+    initial: { opacity: 0, x: 40 },
+    animate: fadeInRightAnimation,
+    transition: { duration: 0.8 },
+  },
+  imageContainer: {
+    initial: { opacity: 0, x: 40 },
+    animate: fadeInRightAnimation,
+    transition: { duration: 0.8 },
+  },
+  textContainer: {
+    initial: { opacity: 0, x: -40 },
+    animate: fadeInLeftAnimation,
+    transition: { duration: 0.8 },
+  },
+  completedContainer: {
+    initial: { opacity: 0, y: 20 },
+    animate: fadeInUpAnimation,
+    transition: { duration: 0.6, delay: 0.2 },
+  },
+  rocketAnimation: {
+    initial: { opacity: 0, y: 50 },
+    animate: fadeInUpAnimation,
+    transition: {
+      duration: 0.8,
+      delay: 0.4,
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+  progressBar: {
+    initial: { width: "0%" },
+    animate: { width: "100%" },
+    transition: { duration: 0.5 },
+  },
+  progressFill: (width) => ({
+    initial: { width: "0%" },
+    animate: { width },
+    transition: { duration: 0.5 },
+  }),
+};
+
+// Topic hover animation for Step3
+export const topicHoverAnimation = {
+  initial: { opacity: 0, y: -10 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+  transition: { type: "easeInOut", duration: 0.5 },
+  button: {
+    whileHover: shareButtonAnimations.whileHover,
+    whileTap: shareButtonAnimations.whileTap,
   },
 };

@@ -250,3 +250,59 @@ export const forgotPasswordStyles = {
   backLinkText: `ml-1 text-blue-600 font-semibold hover:underline`,
   backLinkHover: `hover:text-[#2d2dff]`,
 };
+
+// Onboarding styles
+export const onboardingStyles = {
+  container: `flex flex-col lg:flex-row items-center justify-between h-screen px-8 bg-white`,
+  imageContainer: `flex-1 flex items-center justify-center order-1 lg:order-2`,
+  image: `w-full`,
+  imageWrapper: `w-80 md:w-[500px] transition-transform duration-300 transform hover:scale-105`,
+  textContainer: `flex-1 max-w-lg text-center md:text-left order-2 lg:order-1`,
+  heading: `text-2xl md:text-4xl text-center font-bold text-gray-900`,
+  paragraph: `mt-4 text-gray-600 text-sm md:text-base text-center`,
+  button: `${sharedButtonStyles} mt-6 px-10 py-1 flex justify-center mx-auto`,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+};
+
+// Step styles
+export const stepStyles = {
+  container: `${onboardingStyles.container} lg:space-x-60 md:px-24`,
+  imageContainer: `hidden md:flex flex-1 items-center justify-center`,
+  imageWrapper: `${onboardingStyles.imageWrapper}`,
+  image: `${onboardingStyles.image}`,
+  formContainer: `flex-1 max-w-lg text-center md:text-left flex flex-col items-center justify-center md:items-start md:justify-start`,
+  formWrapper: `w-full max-w-[450px] bg-white rounded-lg p-6 shadow-sm border border-gray-100`,
+  progressBar: `w-full h-2 bg-gray-200 rounded-full mb-6`,
+  progressFill: () => `h-full bg-blue-600 rounded-full`,
+  heading: `text-2xl font-bold text-gray-900 mb-2`,
+  paragraph: `text-gray-600 mb-6`,
+  form: `w-full flex flex-col items-center justify-centerl`,
+  input: `w-full p-3 border border-[#2D2DFF] focus:outline-none focus:border-[#2D2DFF]/50 rounded-md hover:border-[#1212d6] transition duration-300`,
+  ageHint: `text-red-500 text-sm mt-2 text-center`,
+  button: onboardingStyles.button,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+  topicButtonsContainer: `flex flex-col space-y-3 mb-6 relative`,
+  topicButton: (isSelected) =>
+    `w-full py-3 px-4 rounded-full border transition-all cursor-pointer ${
+      isSelected
+        ? "border-[#2D2DFF] bg-blue-50 text-blue-700 cursor-pointer"
+        : "border-gray-200 hover:border-[#1212d6] text-gray-700"
+    }`,
+  topicHint: `absolute left-0 mt-2 w-full bg-gray-100 text-gray-800 text-sm p-3 rounded-lg shadow-lg z-10`,
+};
+
+// Completed onboarding styles
+export const completedStyles = {
+  container: `${onboardingStyles.container} md:px-24`,
+  textContainer: `flex-1 max-w-lg flex flex-col items-center justify-center text-center md:text-left`,
+  heading: `text-3xl md:text-4xl text-center font-bold text-gray-900 mb-2`,
+  paragraph: `text-gray-600 mb-8`,
+  imageContainer: `flex-1 flex items-center justify-center mt-8 md:mt-0`,
+  imageWrapper: onboardingStyles.wrapper,
+  image: onboardingStyles.image,
+  button: onboardingStyles.button,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+};
