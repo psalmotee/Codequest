@@ -265,21 +265,6 @@ export const onboardingStyles = {
   buttonText: sharedButtonTextStyles,
 };
 
-// Completed onboarding styles
-export const completedStyles = {
-  container: `${onboardingStyles.container} md:px-24`,
-  textContainer: `flex-1 max-w-lg flex flex-col items-center justify-center text-center md:text-left`,
-  heading: `text-3xl md:text-4xl text-center font-bold text-gray-900 mb-2`,
-  paragraph: `text-gray-600 mb-8`,
-  imageContainer: `flex-1 flex items-center justify-center mt-8 md:mt-0`,
-  imageWrapper: onboardingStyles.wrapper,
-  image: onboardingStyles.image,
-  button: onboardingStyles.button,
-  buttonHover: sharedButtonHoverStyles,
-  buttonText: sharedButtonTextStyles,
-};
-
-
 // Step styles
 export const stepStyles = {
   container: `${onboardingStyles.container} lg:space-x-60 md:px-24`,
@@ -308,3 +293,16 @@ export const stepStyles = {
   topicHint: `absolute left-0 mt-2 w-full bg-gray-100 text-gray-800 text-sm p-3 rounded-lg shadow-lg z-10`,
 };
 
+// Completed onboarding styles
+export const completedStyles = {
+  container: `${onboardingStyles.container} md:px-24`,
+  textContainer: `flex-1 max-w-lg flex flex-col items-center justify-center text-center md:text-left`,
+  heading: `text-3xl md:text-4xl text-center font-bold text-gray-900 mb-2`,
+  paragraph: `text-gray-600 mb-8`,
+  imageContainer: `flex-1 flex items-center justify-center mt-8 md:mt-0`,
+  imageWrapper: onboardingStyles.wrapper,
+  image: onboardingStyles.image,
+  button: onboardingStyles.button,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+};
