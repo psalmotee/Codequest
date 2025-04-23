@@ -8,7 +8,7 @@ import CodingAmico from "../../assets/images/Coding-amico.png";
 import { stepStyles } from "../../assets//styles/styles";
 import {
   onboardingAnimations,
-  topicHoverAnimation
+  topicHoverAnimation,
 } from "../../assets/animations/animations";
 
 const Step4 = () => {
@@ -82,23 +82,18 @@ const Step4 = () => {
           </h2>
 
           <div className={stepStyles.topicButtonsContainer}>
-            {["Never tried", "A bit", "I've built stuff!"].map(
-              (option) => (
-                <motion.div
-                  key={option}
-                  {...topicHoverAnimation.button}
+            {["Never tried", "A bit", "I've built stuff!"].map((option) => (
+              <motion.div key={option} {...topicHoverAnimation.button}>
+                <motion.button
+                  onClick={() => handleExperienceSelect(option)}
+                  className={stepStyles.topicButton(
+                    codingExperience === option
+                  )}
                 >
-                  <motion.button
-                    onClick={() => handleExperienceSelect(option)}
-                    className={stepStyles.topicButton(
-                      codingExperience === option
-                    )}
-                  >
-                    {option}
-                  </motion.button>
-                </motion.div>
-              )
-            )}
+                  {option}
+                </motion.button>
+              </motion.div>
+            ))}
           </div>
 
           <motion.button

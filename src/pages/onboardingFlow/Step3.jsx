@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { stepStyles } from "../../assets//styles/styles";
 import {
   onboardingAnimations,
-  topicHoverAnimation
+  topicHoverAnimation,
 } from "../../assets/animations/animations";
 
 const Step3 = () => {
