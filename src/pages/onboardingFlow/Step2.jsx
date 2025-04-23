@@ -78,7 +78,7 @@ const Step2 = () => {
             This helps us choose the perfect level for your missions!
           </p>
 
-          <form action="" onSubmit={""}>
+          <form action="">
             <input
               type="text"
               placeholder="Enter your age here"

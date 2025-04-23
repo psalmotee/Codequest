@@ -70,7 +70,6 @@ const Step1 = () => {
           </p>
           <form
             action=""
-            onSubmit={''}
           >
             <input
               type="text"

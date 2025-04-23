@@ -274,7 +274,7 @@ export const stepStyles = {
   formContainer: `flex-1 max-w-lg text-center md:text-left flex flex-col items-center justify-center md:items-start md:justify-start`,
   formWrapper: `w-full max-w-[450px] bg-white rounded-lg p-6 shadow-sm border border-gray-100`,
   progressBar: `w-full h-2 bg-gray-200 rounded-full mb-6`,
-  progressFill: (progress) => `h-full bg-blue-600 rounded-full`,
+  progressFill: () => `h-full bg-blue-600 rounded-full`,
   heading: `text-2xl font-bold text-gray-900 mb-2`,
   paragraph: `text-gray-600 mb-6`,
   form: `w-full flex flex-col items-center justify-centerl`,
