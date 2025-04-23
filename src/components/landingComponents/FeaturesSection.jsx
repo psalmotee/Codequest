@@ -59,26 +59,29 @@ function FeaturesSection() {
       }}
     >
       <motion.div
-        {...featureAnimations.container} 
-        animate={isInView ? featureAnimations.container.animate : {}} 
+        {...featureAnimations.container}
+        animate={isInView ? featureAnimations.container.animate : {}}
         className={featureStyles.container}
       >
         <h2 className={featureStyles.heading}>Why choose us</h2>
 
-        <div className={featureStyles.grid}>
+        <motion.div
+          {...featureAnimations.slide}
+          className={featureStyles.grid}
+        >
           {/* Map through the features array to render each feature card */}
-          {features.map((feature, index) => (
+          {features.concat(features).map((feature, index) => (
             <motion.div
-              key={index} 
-              {...featureAnimations.card(index)} 
-              animate={isInView ? featureAnimations.card(index).animate : {}} 
+              key={index}
+              {...featureAnimations.card(index)}
+              animate={isInView ? featureAnimations.card(index).animate : {}}
               className={featureStyles.card}
             >
               {/* Feature icon container */}
               <div className={featureStyles.iconContainer(feature.color)}>
                 <img
                   src={feature.img}
-                  alt={feature.title} 
+                  alt={feature.title}
                   className={featureStyles.icon}
                 />
               </div>
@@ -89,7 +92,7 @@ function FeaturesSection() {
               <p className={featureStyles.description}>{feature.text}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

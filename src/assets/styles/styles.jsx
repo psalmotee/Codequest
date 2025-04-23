@@ -9,8 +9,8 @@
 //
 //
 //
-// 
-// 
+//
+//
 
 // This is the shared styles for the container used in multiple sections
 const sharedContainerStyles = `container mx-auto px-4`;
@@ -22,7 +22,7 @@ const sharedButtonTextStyles = `relative z-10`;
 
 export const headerStyles = {
   header: `fixed top-0 left-0 w-full z-50 bg-[#FF8721]`,
-  container: `${sharedContainerStyles} flex items-center justify-between`,
+  container: `${sharedContainerStyles} flex items-center justify-between py-6`,
   logoContainer: `flex items-center w-1/2 md:w-1/4 lg:w-1/5`,
   logoLink: `flex items-center`,
   desktopNav: `hidden lg:flex space-x-4 text-white`,
@@ -63,7 +63,7 @@ export const heroStyles = {
   button: sharedButtonStyles,
   buttonHover: sharedButtonHoverStyles,
   buttonText: sharedButtonTextStyles,
-  imageContainer: `w-full max-w-2xl md:h-60 lg:h-90 relative w-full relative transition-transform duration-500 transform hover:scale-105`,
+  imageContainer: `w-full max-w-2xl md:h-60 lg:h-90 w-full relative transition-transform duration-500 transform hover:scale-105`,
   image: `w-full h-full object-cover rounded-[256px] shadow-xl`,
 };
 
@@ -71,14 +71,14 @@ export const featureStyles = {
   section: `relative w-full overflow-hidden`,
   container: `${sharedContainerStyles} relative z-10`,
   heading: `text-center font-bold text-2xl md:text-3xl mb-10`,
-  grid: `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto`,
-  card: `bg-white shadow-lg rounded-lg p-6 transition-all duration-300 transform hover:scale-105`,
+  grid: `flex gap-6 w-max px-6`,
+  card: `w-[280px] bg-white shadow-lg rounded-lg p-6 flex-shrink-0 transition-all duration-300 transform hover:scale-105`,
   iconContainer: (color) =>
     `${color} text-white p-2 w-12 h-12 flex items-center justify-center rounded-md`,
   icon: `w-6 h-6`,
   title: `text-lg font-semibold mt-4`,
   divider: `block mt-2 w-10 h-1 bg-blue-500`,
-  description: `text-gray-600 mt-2 text-sm`,
+  description: `text-gray-600 mt-2 text-sm leading-6`,
 };
 
 // This is the shared styles for the About, Parents, and Teachers sections
@@ -250,3 +250,61 @@ export const forgotPasswordStyles = {
   backLinkText: `ml-1 text-blue-600 font-semibold hover:underline`,
   backLinkHover: `hover:text-[#2d2dff]`,
 };
+
+// Onboarding styles
+export const onboardingStyles = {
+  container: `flex flex-col lg:flex-row items-center justify-between h-screen px-8 bg-white`,
+  imageContainer: `flex-1 flex items-center justify-center order-1 lg:order-2`,
+  image: `w-full`,
+  imageWrapper: `w-80 md:w-[500px] transition-transform duration-300 transform hover:scale-105`,
+  textContainer: `flex-1 max-w-lg text-center md:text-left order-2 lg:order-1`,
+  heading: `text-2xl md:text-4xl text-center font-bold text-gray-900`,
+  paragraph: `mt-4 text-gray-600 text-sm md:text-base text-center`,
+  button: `${sharedButtonStyles} mt-6 px-10 py-1 flex justify-center mx-auto`,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+};
+
+// Completed onboarding styles
+export const completedStyles = {
+  container: `${onboardingStyles.container} md:px-24`,
+  textContainer: `flex-1 max-w-lg flex flex-col items-center justify-center text-center md:text-left`,
+  heading: `text-3xl md:text-4xl text-center font-bold text-gray-900 mb-2`,
+  paragraph: `text-gray-600 mb-8`,
+  imageContainer: `flex-1 flex items-center justify-center mt-8 md:mt-0`,
+  imageWrapper: onboardingStyles.wrapper,
+  image: onboardingStyles.image,
+  button: onboardingStyles.button,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+};
+
+
+// Step styles
+export const stepStyles = {
+  container: `${onboardingStyles.container} lg:space-x-60 md:px-24`,
+  imageContainer: `hidden md:flex flex-1 items-center justify-center`,
+  imageWrapper: `${onboardingStyles.imageWrapper}`,
+  image: `${onboardingStyles.image}`,
+  formContainer: `flex-1 max-w-lg text-center md:text-left flex flex-col items-center justify-center md:items-start md:justify-start`,
+  formWrapper: `w-full max-w-[450px] bg-white rounded-lg p-6 shadow-sm border border-gray-100`,
+  progressBar: `w-full h-2 bg-gray-200 rounded-full mb-6`,
+  progressFill: (progress) => `h-full bg-blue-600 rounded-full`,
+  heading: `text-2xl font-bold text-gray-900 mb-2`,
+  paragraph: `text-gray-600 mb-6`,
+  form: `w-full flex flex-col items-center justify-centerl`,
+  input: `w-full p-3 border border-[#2D2DFF] focus:outline-none focus:border-[#2D2DFF]/50 rounded-md hover:border-[#1212d6] transition duration-300`,
+  ageHint: `text-red-500 text-sm mt-2 text-center`,
+  button: onboardingStyles.button,
+  buttonHover: sharedButtonHoverStyles,
+  buttonText: sharedButtonTextStyles,
+  topicButtonsContainer: `flex flex-col space-y-3 mb-6 relative`,
+  topicButton: (isSelected) =>
+    `w-full py-3 px-4 rounded-full border transition-all cursor-pointer ${
+      isSelected
+        ? "border-[#2D2DFF] bg-blue-50 text-blue-700 cursor-pointer"
+        : "border-gray-200 hover:border-[#1212d6] text-gray-700"
+    }`,
+  topicHint: `absolute left-0 mt-2 w-full bg-gray-100 text-gray-800 text-sm p-3 rounded-lg shadow-lg z-10`,
+};
+
