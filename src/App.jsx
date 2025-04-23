@@ -1,20 +1,21 @@
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AnimatePresence } from "framer-motion";
+import LandingPage from "./pages/LandingPage";
 import SelectAccount from "./pages/SelectAccount";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import VerifyEmail from "./pages/VerifyEmail";
-import LandingPage from "./pages/LandingPage";
 import Onboarding from "./pages/onboardingFlow/Onboarding";
 import Step1 from "./pages/onboardingFlow/Step1";
 import Step2 from "./pages/onboardingFlow/Step2";
 import Step3 from "./pages/onboardingFlow/Step3";
 import Step4 from "./pages/onboardingFlow/Step4";
 import CompletedOnboarding from "./pages/onboardingFlow/CompletedOnboarding";
-import { AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import Con from "./components/studentDashboard/ContinueLearning";
 
 function App() {
   const location = useLocation();
@@ -40,6 +41,9 @@ function App() {
             <Route path="step4" element={<Step4 />} />
             <Route path="final" element={<CompletedOnboarding />} />
           </Route>
+
+          {/* Student Dashboard */}
+          {/* <Route path="/student-dashboard" element={<StudentDashboard />} /> */}          
         </Routes>
       </AnimatePresence>
     </>
