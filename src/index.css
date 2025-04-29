@@ -121,6 +121,46 @@ body {
   background-color: #fafafa;
 }
 
+.custom-sidebar {
+  width: clamp(4rem, 15vw, 16rem); /* Scales between 64px and 256px */
+}
+
+@media (max-width: 1000px) {
+  .custom-sidebar {
+    width: 4rem; /* Fixed icon-only sidebar */
+  }
+
+  .custom-hide-label {
+    display: none !important;
+  }
+}
+
+/* Add this somewhere global */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4C3AFF; /* Your blue color */
+  border-radius: 9999px;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
+}
+
 @layer utilities {
   .no-spinner::-webkit-outer-spin-button,
   .no-spinner::-webkit-inner-spin-button {
