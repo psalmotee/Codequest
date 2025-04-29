@@ -19,10 +19,11 @@ const Dashboard = () => {
           <div className="flex-1 space-y-6">
             <WelcomeBanner />
 
-            <div className="flex flex-col md:flex-row gap-6">
-              <StillWorkingOn />
-              <TimeSpentStudying />
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <StillWorkingOn />
+  <TimeSpentStudying />
+</div>
+
 
             <ContinueLearning />
           </div>
