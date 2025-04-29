@@ -10,17 +10,12 @@ import UpcomingClasses from "../components/studentDashboard/UpcomingClasses.jsx"
 const Dashboard = () => {
   return (
     <div className="flex">
-      {/* Sidebar */}
       <Sidebar />
+      <div className="flex-1 ml-[64px] lg:ml-64 transition-all duration-300">
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen bg-[#FFFDFB]">
-        {/* Topbar */}
         <Topbar />
 
-        {/* Main Body */}
-        <main className="p-6 flex flex-col lg:flex-row gap-6">
-          {/* Left Column (Main Content) */}
+        <main className="p-6 pt-24 flex flex-col lg:flex-row gap-6">
           <div className="flex-1 space-y-6">
             <WelcomeBanner />
 
@@ -32,7 +27,6 @@ const Dashboard = () => {
             <ContinueLearning />
           </div>
 
-          {/* Right Sidebar */}
           <div className="w-full lg:w-[280px] space-y-6">
             <ProgressOverview />
             <UpcomingClasses />

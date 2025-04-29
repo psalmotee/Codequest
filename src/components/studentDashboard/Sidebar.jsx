@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { FaHome, FaBook, FaProjectDiagram, FaGamepad, FaUsers, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { name: 'Home', icon: <FaHome /> },
@@ -11,39 +12,60 @@ const navLinks = [
 ];
 
 const Sidebar = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  // Auto collapse on small screens
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCollapsed(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <motion.aside
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 70 }}
-      className="min-h-screen w-64 bg-[#FFF6F2] px-6 py-8 shadow-lg flex flex-col justify-between"
+      className={`fixed top-0 left-0 h-screen bg-[#FFF6F2] shadow-lg transition-all duration-300 z-50 ${
+        isCollapsed ? 'w-[64px]' : 'w-64'
+      }`}
     >
-      <div>
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-red-600 mb-12">
-          Code<span className="text-blue-600">Quest</span>
-        </h1>
+      <div className="flex flex-col h-full px-3 py-8 justify-between">
+        {/* Nav */}
+        <div>
+          <div className="mb-12 px-2">
+            {isCollapsed ? (
+              <span className="text-blue-600 font-bold text-xl">CQ</span>
+            ) : (
+              <h1 className="text-2xl font-bold text-red-600">
+                Code<span className="text-blue-600">Quest</span>
+              </h1>
+            )}
+          </div>
 
-        {/* Nav Links */}
-        <nav className="space-y-6">
-          {navLinks.map((link, index) => (
-            <button
-              key={index}
-              className="flex items-center gap-4 text-gray-700 hover:text-blue-600 font-medium text-lg transition-all duration-200"
-            >
-              <span className="text-xl">{link.icon}</span>
-              {link.name}
-            </button>
-          ))}
-        </nav>
-      </div>
+          <nav className="space-y-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.name}
+                className="flex items-center w-full gap-3 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-white font-semibold text-base transition-all duration-200"
+              >
+                <span className="text-2xl">{link.icon}</span>
+                {!isCollapsed && <span>{link.name}</span>}
+              </button>
+            ))}
+          </nav>
+        </div>
 
-      {/* Sign Out */}
-      <div className="mt-8">
-        <button className="flex items-center gap-3 text-red-600 hover:scale-105 transition-transform text-lg font-semibold">
-          <FaSignOutAlt className="text-xl" />
-          Sign out
-        </button>
+        {/* Sign Out */}
+        <div className="mt-8 px-2">
+          <button className="flex items-center gap-3 text-red-600 hover:scale-105 transition-transform font-semibold text-base">
+            <FaSignOutAlt className="text-2xl" />
+            {!isCollapsed && <span>Sign out</span>}
+          </button>
+        </div>
       </div>
     </motion.aside>
   );
