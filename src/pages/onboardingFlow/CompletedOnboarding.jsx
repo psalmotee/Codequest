@@ -57,7 +57,7 @@ const CompletedOnboarding = () => {
 
   const handleStartMission = () => {
     // Navigate to the first mission or dashboard
-    navigate("/sudent-dashboard", {
+    navigate("/student-dashboard", {
       state: {
         nickname,
         age,

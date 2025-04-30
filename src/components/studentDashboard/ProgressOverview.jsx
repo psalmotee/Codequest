@@ -21,17 +21,17 @@ const ProgressOverview = () => {
         </select>
       </div>
 
-      <div className="w-32 h-32 mx-auto">
+      <div className="w-32 h-32 mx-auto mt-10">
         <CircularProgressbarWithChildren
           value={percentage}
           strokeWidth={10}
           styles={buildStyles({
-            pathColor: '#3B82F6', // Tailwind blue-500
-            trailColor: '#E5E7EB', // Tailwind gray-200
+            pathColor: "#2D2DFF",
+            trailColor: "#E5E7EB",
           })}
         >
           <div className="text-center mt-2">
-            <p className="text-xl font-bold text-blue-600">{percentage}%</p>
+            <p className="text-xl font-bold text-[#2D2DFF]">{percentage}%</p>
           </div>
         </CircularProgressbarWithChildren>
       </div>
