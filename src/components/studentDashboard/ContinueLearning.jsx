@@ -5,7 +5,7 @@ const continueCourses = [
     id: 1,
     title: 'Geometry & shapes',
     progress: 66,
-    image: 'images/GeometryImage.png', // Replace with your image
+    image: 'images/GeometryImage.png',
   },
   {
     id: 2,
@@ -24,15 +24,19 @@ const ContinueLearning = () => {
       transition={{ delay: 0.5 }}
     >
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-semibold text-gray-800">Continue Learning</h3>
-        <button className="text-sm text-blue-500 hover:underline">View all</button>
+        <h3 className="text-lg font-semibold text-gray-800">
+          Continue Learning
+        </h3>
+        <button className="text-sm text-[#2D2DFF] hover:underline">
+          View all
+        </button>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         {continueCourses.map((course) => (
           <div
             key={course.id}
-            className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
+            className="bg-[#fff] rounded-2xl p-4 shadow-sm border border-gray-100"
           >
             <div className="h-36 w-full overflow-hidden rounded-xl mb-4 bg-gray-100 flex items-center justify-center">
               <img
@@ -42,16 +46,18 @@ const ContinueLearning = () => {
               />
             </div>
             <div className="flex justify-between items-center mb-1">
-              <h4 className="text-sm font-semibold text-gray-700">{course.title}</h4>
+              <h4 className="text-sm font-semibold text-gray-700">
+                {course.title}
+              </h4>
               <span className="text-xs text-gray-500">{course.progress}%</span>
             </div>
             <div className="w-full h-2 bg-gray-200 rounded-full mb-4">
               <div
-                className="h-2 bg-blue-500 rounded-full"
+                className="h-2 bg-[#2D2DFF] rounded-full"
                 style={{ width: `${course.progress}%` }}
               ></div>
             </div>
-            <button className="w-full text-center text-sm font-medium text-blue-600 border border-blue-600 rounded-lg py-1.5 hover:bg-blue-50 transition">
+            <button className="w-full text-center text-sm font-medium text-[#2D2DFF] border border-[#2D2DFF] rounded-lg py-1.5 hover:bg-blue-50 transition">
               Continue
             </button>
           </div>

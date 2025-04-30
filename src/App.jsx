@@ -15,7 +15,7 @@ import Step2 from "./pages/onboardingFlow/Step2";
 import Step3 from "./pages/onboardingFlow/Step3";
 import Step4 from "./pages/onboardingFlow/Step4";
 import CompletedOnboarding from "./pages/onboardingFlow/CompletedOnboarding";
-import Con from "./components/studentDashboard/ContinueLearning";
+import StudentDashboard from "./pages/StudentDashboard";
 
 function App() {
   const location = useLocation();
@@ -43,7 +43,7 @@ function App() {
           </Route>
 
           {/* Student Dashboard */}
-          {/* <Route path="/student-dashboard" element={<StudentDashboard />} /> */}
+          <Route path="/student-dashboard" element={<StudentDashboard />} />                  
         </Routes>
       </AnimatePresence>
     </>

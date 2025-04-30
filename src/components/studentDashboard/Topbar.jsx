@@ -1,38 +1,75 @@
-import { motion } from 'framer-motion';
-import { FaBell, FaEnvelope } from 'react-icons/fa';
+"use client";
 
-const Topbar = () => {
+import { motion } from "framer-motion";
+import logoRB from "../../assets/images/Logo-R-B.png";
+import { FaBars, FaTimes, FaBell, FaEnvelope } from "react-icons/fa";
+
+const Topbar = ({ toggleSidebar, sidebarOpen }) => {
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="w-full bg-white flex items-center justify-between px-6 py-4 shadow-sm"
+      className="w-full bg-white flex items-center justify-between px-4 py-3 shadow-sm"
     >
-      {/* Search Bar */}
-      <div className="w-full max-w-md">
-        <input
-          type="text"
-          placeholder="Type something fun to explore!"
-          className="w-full px-4 py-2 rounded-full bg-[#FFF6F2] focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
-        />
+      <div className="flex items-center gap-2">
+        {/* Menu Toggle - Only visible on tablet and below */}
+        <button
+          onClick={toggleSidebar}
+          className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+        >
+          {sidebarOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+        </button>
+
+        {/* Logo - Only visible on large screens */}
+        <div className="hidden lg:block">
+          <img
+            src={logoRB}
+            alt="CodeQuest"
+            className="h-8"
+          />
+        </div>
       </div>
 
-      {/* Icons and Profile */}
-      <div className="flex items-center gap-6">
-        <button className="text-gray-600 hover:text-blue-500 text-xl">
-          <FaEnvelope />
-        </button>
-        <button className="text-gray-600 hover:text-blue-500 text-xl">
-          <FaBell />
-        </button>
-        <div className="flex items-center gap-3">
-          <img
-            src="/images/StudentProfile.png"
-            alt="User Avatar"
-            className="w-10 h-10 rounded-full"
+      {/* Search Bar - Responsive width */}
+      <div className="flex-1 max-w-md mx-2">
+        <div className="relative">
+          <svg
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="text-gray-700 font-semibold">Jayy One</span>
+        </div>
+      </div>
+
+      {/* Icons and Profile - Compact on mobile */}
+      <div className="flex items-center gap-1 md:gap-4">
+        <button className="p-1 md:p-2 rounded-full hover:bg-gray-100">
+          <FaEnvelope className="h-4 w-4 md:h-5 md:w-5 text-gray-500" />
+        </button>
+        <button className="p-1 md:p-2 rounded-full hover:bg-gray-100">
+          <FaBell className="h-4 w-4 md:h-5 md:w-5 text-gray-500" />
+        </button>
+        <div className="flex items-center gap-2">
+          <img
+            src="/images/avatar.png"
+            alt="User Avatar"
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          <span className="text-sm font-medium hidden md:block">Jayy One</span>
         </div>
       </div>
     </motion.header>

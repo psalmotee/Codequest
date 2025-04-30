@@ -6,7 +6,7 @@ const classes = [
     title: "Basic AI concepts",
     date: "Tomorrow",
     time: "12:00 - 1:00",
-    img: "/images/AiImage.png", // Add proper path in your public folder
+    img: "/images/AiImage.png", 
   },
   {
     title: "patterns",
@@ -31,7 +31,7 @@ const classes = [
 const UpcomingClasses = () => {
   return (
     <motion.div
-      className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
+      className="bg-{#fff} rounded-2xl p-4 shadow-sm border border-gray-100"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.6 }}
@@ -40,7 +40,7 @@ const UpcomingClasses = () => {
 
       <div className="space-y-4">
         {classes.map((cls, index) => (
-          <div key={index} className="flex items-center gap-3">
+          <button key={index} className="flex items-center gap-3">
             <img
               src={cls.img}
               alt={cls.title}
@@ -51,7 +51,7 @@ const UpcomingClasses = () => {
               <span className="text-gray-500">{cls.date}</span>
               <span>{cls.time}</span>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     </motion.div>

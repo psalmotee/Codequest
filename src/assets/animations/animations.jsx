@@ -424,6 +424,7 @@ export const onboardingAnimations = {
     animate: { width },
     transition: { duration: 0.5 },
   }),
+  
 };
 
 // Topic hover animation for Step3
