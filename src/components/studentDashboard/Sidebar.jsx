@@ -12,6 +12,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
+
 const navLinks = [
   { name: "Home", icon: <FaHome /> },
   { name: "Courses", icon: <FaBook /> },
@@ -24,7 +25,7 @@ const navLinks = [
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("Home");
 
-  return (
+   return (
     <motion.aside
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}

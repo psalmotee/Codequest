@@ -43,11 +43,11 @@ function App() {
           </Route>
 
           {/* Student Dashboard */}
-          <Route path="/student-dashboard" element={<StudentDashboard />} />                  
+          <Route path="/student-dashboard" element={<StudentDashboard />} />
         </Routes>
       </AnimatePresence>
     </>
-  );
+  )
 }
 
 export default App;
