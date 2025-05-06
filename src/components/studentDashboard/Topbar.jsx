@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import logoRB from "../../assets/images/Logo-R-B.png";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaBell, FaEnvelope } from "react-icons/fa";
 
 const Topbar = ({ toggleSidebar, sidebarOpen }) => {
@@ -23,11 +23,9 @@ const Topbar = ({ toggleSidebar, sidebarOpen }) => {
 
         {/* Logo - Only visible on large screens */}
         <div className="hidden lg:block">
-          <img
-            src={logoRB}
-            alt="CodeQuest"
-            className="h-8"
-          />
+          <Link to="/student-dashboard">
+            <img src="/images/Logo-R-B.png" alt="CodeQuest" className="h-8" />
+          </Link>
         </div>
       </div>
 
@@ -63,14 +61,21 @@ const Topbar = ({ toggleSidebar, sidebarOpen }) => {
         <button className="p-1 md:p-2 rounded-full hover:bg-gray-100">
           <FaBell className="h-4 w-4 md:h-5 md:w-5 text-gray-500" />
         </button>
-        <div className="flex items-center gap-2">
-          <img
-            src="/images/avatar.png"
-            alt="User Avatar"
-            className="h-8 w-8 rounded-full object-cover"
-          />
+
+        {/* Profile Link - Navigates to Student Profile */}
+        <Link
+          to="/student-dashboard/student-profile"
+          className="flex items-center gap-2 hover:bg-gray-50 p-1 rounded-full transition-colors"
+        >
+          <div className="h-8 w-8 rounded-full overflow-hidden">
+            <img
+              src="/images/jayy.png"
+              alt="User Avatar"
+              className="h-full w-full object-cover"
+            />
+          </div>
           <span className="text-sm font-medium hidden md:block">Jayy One</span>
-        </div>
+        </Link>
       </div>
     </motion.header>
   );

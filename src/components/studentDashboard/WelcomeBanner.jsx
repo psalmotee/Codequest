@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import BannerImage from '../../assets/images/BannerImage.png'
+import BannerImage from '/images/BannerImage.png'
 
 const WelcomeBanner = () => {
   return (

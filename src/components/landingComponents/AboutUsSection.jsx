@@ -1,17 +1,18 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { aboutStyles } from "../../assets/styles/styles";
 import { aboutAnimations } from "../../assets/animations/animations";
 import aboutUsImg from "/images/AboutUs-img.png";
+import { useNavigate } from "react-router-dom";
 
-// AboutUsSection component: Displays the "About Us" section of the landing page
 function AboutUsSection() {
+  // JoinUsButton function: Handles navigation to the Select Account page
+  // Hook to get the navigate function
+  const navigate = useNavigate();
 
-    const navigate = useNavigate(); // Initialize navigate
-  
-    const handleJoinUsClick = () => {
-      navigate("/select-account"); // Navigate to the Select Account page
-    };
+  // Function to handle the register button click
+  const joinUsButton = () => {
+    navigate("/select-account"); // Navigate to the Select Account page
+  };
 
   return (
     <section className={aboutStyles.section} id="aboutus">
@@ -83,13 +84,13 @@ function AboutUsSection() {
 
             {/* Join Us Button */}
             <motion.button
-      whileHover={aboutAnimations.button.whileHover}
-      className={aboutStyles.button}
-      onClick={handleJoinUsClick} // Add onClick handler
-    >
-      <span className={aboutStyles.buttonHover}></span>
-      <span className={aboutStyles.buttonText}>Join Us</span>
-    </motion.button>
+              whileHover={aboutAnimations.button.whileHover}
+              className={aboutStyles.button}
+              onClick={joinUsButton}
+            >
+              <span className={aboutStyles.buttonHover}></span>
+              <span className={aboutStyles.buttonText}>Join Us</span>
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>

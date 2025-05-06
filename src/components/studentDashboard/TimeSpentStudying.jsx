@@ -5,16 +5,15 @@ import { useState } from "react";
 
 const TimeSpentStudying = () => {
   const [data] = useState([
-    { day: "Mon", hours: 12.5, color: "#4ade80" }, // Green
-    { day: "Tue", hours: 9.8, color: "#facc15" }, // Yellow
-    { day: "Wed", hours: 3.2, color: "#4ade80" }, // Green
-    { day: "Thu", hours: 2.7, color: "#facc15" }, // Yellow
-    { day: "Fri", hours: 1.5, color: "#f87171" }, // Red
-    { day: "Sat", hours: 0.8, color: "#f87171" }, // Red
-    { day: "Sun", hours: 0.5, color: "#f87171" }, // Red
+    { day: "Mon", hours: 8.5, color: "#1DBC1A" }, // Green
+    { day: "Tue", hours: 4.8, color: "#E2CF1C" }, // Yellow
+    { day: "Wed", hours: 4.5, color: "#E2CF1C" }, // Yellow
+    { day: "Thu", hours: 6.0, color: "#1DBC1A" }, // Green
+    { day: "Fri", hours: 2.0, color: "#BC1A1A" }, // Red
+    { day: "Sat", hours: 4.2, color: "#E2CF1C" }, // Yellow
+    { day: "Sun", hours: 0.8, color: "#BC1A1A" }, // Red
   ]);
 
-  // Find the maximum value for scaling
   const maxHours = Math.max(...data.map((item) => item.hours));
 
   return (
@@ -22,29 +21,36 @@ const TimeSpentStudying = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="bg-white p-5 rounded-2xl shadow-sm"
+      className="bg-white p-4 rounded-2xl shadow-sm w-full max-w-sm"
     >
-      <h3 className="text-lg font-semibold mb-6 text-gray-800">
-        Time Spent Studying
-      </h3>
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-sm font-medium text-gray-800">
+          Time Spent Studying
+        </h3>
+        <span className="text-xs text-gray-400 cursor-pointer">More...</span>
+      </div>
 
-      <div className="flex items-end justify-between h-48 px-2">
-        {data.map((item, index) => (
-          <div key={index} className="flex flex-col items-center w-full">
-            {/* Bar */}
-            <div
-              className="w-6 rounded-t-md transition-all duration-500 ease-in-out"
-              style={{
-                height: `${(item.hours / maxHours) * 100}%`,
-                backgroundColor: item.color,
-                minHeight: "4px",
-              }}
-            />
+      <div className="flex justify-between items-end h-40 px-1">
+        {data.map((item, index) => {
+          const heightPercent = (item.hours / maxHours) * 100;
 
-            {/* Day label */}
-            <div className="mt-2 text-xs text-gray-500">{item.day}</div>
-          </div>
-        ))}
+          return (
+            <div key={index} className="flex flex-col items-center w-full">
+              {/* Bar wrapper with gray background */}
+              <div className="relative w-2 bg-gray-200 h-32 rounded-full overflow-hidden flex items-end">
+                <div
+                  className="absolute bottom-0 w-full"
+                  style={{
+                    height: `${heightPercent}%`,
+                    backgroundColor: item.color,
+                    borderRadius: "9999px",
+                  }}
+                />
+              </div>
+              <div className="mt-2 text-xs text-gray-500">{item.day}</div>
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );

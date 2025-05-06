@@ -1,18 +1,22 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { parentsStyles } from "../../assets/styles/styles";
 import { parentsAnimations } from "../../assets/animations/animations";
 import parentImg from "/images/parent-img.png";
+import { useNavigate } from "react-router-dom";
+
 
 // Component for the "Parents Section" of the landing page
 function ParentsSection() {
 
+  // Parent Button function: Handles navigation to the Select Account page
+  // Hook to get the navigate function
   const navigate = useNavigate();
-  
+
+  // Function to handle the register button click
   const readMoreButton = () => {
     navigate("/select-account"); // Navigate to the Select Account page
   };
-
+  
   return (
     <section className={parentsStyles.section}>
       <div className={parentsStyles.container}>
@@ -88,10 +92,11 @@ function ParentsSection() {
             <motion.button
               whileHover={parentsAnimations.button.whileHover}
               className={parentsStyles.button}
-              onClick={readMoreButton}
+              onClick={readMoreButton} // Call the function to navigate to the Select Account page
             >
+              {/* Button hover effect and text */}
               <span className={parentsStyles.buttonHover}></span>
-              <span className={parentsStyles.buttonText}>Try it out</span>
+              <span className={parentsStyles.buttonText}>Read More</span>
             </motion.button>
           </motion.div>
 

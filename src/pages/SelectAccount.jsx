@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { signStyles, selectAccountStyles } from "../assets/styles/styles";
+import { selectAccountAnimations } from "../assets/animations/animations";
 import Illustration from "/images/SelectAccountImage.png";
 
 const SelectAccount = () => {
@@ -13,63 +15,67 @@ const SelectAccount = () => {
   };
 
   return (
-    <div ref={ref} className="flex h-screen">
+    <div ref={ref} className={signStyles.container}>
       {/* Left Side - Illustration Only (Hidden at 500px) */}
       <motion.div
-        className="hidden md:flex w-1/2 items-center justify-center bg-orange-500"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.5 }}
+        className={signStyles.illustrationContainer}
+        initial={selectAccountAnimations.illustrationContainer.initial}
+        animate={isInView ? selectAccountAnimations.illustrationContainer.animate : {}}
+        transition={selectAccountAnimations.illustrationContainer.transition}
       >
         <img
           src={Illustration}
           alt="Illustration"
-          className="w-3/4 h-auto object-contain"
+          className={signStyles.illustrationImage}
         />
       </motion.div>
 
       {/* Right Side - Account Selection */}
       <motion.div
-        className="w-full md:w-1/2 bg-blue-600 flex flex-col items-center justify-center text-white p-6"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.5 }}
+        className={selectAccountStyles.formContainer}
+        initial={selectAccountAnimations.formContainer.initial}
+        animate={isInView ? selectAccountAnimations.formContainer.animate : {}}
+        transition={selectAccountAnimations.formContainer.transition}
       >
         <motion.h2
-          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-center px-4"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
+          className={selectAccountStyles.heading}
+          initial={selectAccountAnimations.heading.initial}
+          animate={isInView ? selectAccountAnimations.heading.animate : {}}
+          transition={selectAccountAnimations.heading.transition}
         >
           Choose an account type to start with!
         </motion.h2>
 
-        <div className="space-y-4 w-3/4">
-          {["Student", "Teacher", "Class Code", "Parents", "Admin"].map((type, index) => (
-            <motion.button
-              key={type}
-              className="w-full bg-white text-black font-semibold py-3 rounded-lg shadow-md hover:bg-gray-200 transition cursor-pointer"
-              initial={{ scale: 0.9 }}
-              animate={isInView ? { scale: 1 } : {}}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleAccountSelection(type)} // Navigate to Signup
-              transition={{ duration: 0.3 }}
-            >
-              {type}
-            </motion.button>
-          ))}
+        <div className={selectAccountStyles.buttonContainer}>
+          {["Student", "Teacher", "Class Code", "Parents", "Admin"].map(
+            (type, index) => (
+              <motion.button
+                key={type}
+                className={selectAccountStyles.button}
+                whileHover={selectAccountAnimations.button(index).whileHover}
+                whileTap={selectAccountAnimations.button(index).whileTap}
+                onClick={() => handleAccountSelection(type)}
+                initial={selectAccountAnimations.button(index).initial}
+                animate={
+                  isInView ? selectAccountAnimations.button(index).animate : {}
+                }
+                transition={selectAccountAnimations.button(index).transition}
+              >
+                {type}
+              </motion.button>
+            )
+          )}
         </div>
 
         {/* Sign-in link */}
         <motion.p
-          className="mt-6 text-sm text-center"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
+          className={selectAccountStyles.signInText}
+          initial={selectAccountAnimations.signInText.initial}
+          animate={isInView ? selectAccountAnimations.signInText.animate : {}}
+          transition={selectAccountAnimations.signInText.transition}
         >
           Already have an account?{" "}
-          <Link to="/signin" className="text-red-400 font-semibold hover:underline">
+          <Link to="/signin" className={selectAccountStyles.signInlink}>
             Sign In
           </Link>
         </motion.p>

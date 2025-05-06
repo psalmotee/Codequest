@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { heroStyles } from "../../assets/styles/styles";
 import { heroAnimations } from "../../assets/animations/animations";
@@ -30,7 +30,7 @@ function HeroSection() {
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [images.length]);
-
+  
   // Hook to get the navigate function
   const navigate = useNavigate();
 
@@ -38,7 +38,6 @@ function HeroSection() {
   const registerButton = () => {
     navigate("/select-account"); // Navigate to the Select Account page
   };
-
   return (
     <section ref={ref} className={heroStyles.section}>
       <div className={heroStyles.container}>

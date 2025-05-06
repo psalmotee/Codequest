@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import LearningCuate from "../../assets/images/Learning-cuate.png";
+import LearningCuate from "/images/Learning-cuate.png";
 import { toast } from "react-toastify";
 import { stepStyles } from "../../assets//styles/styles";
 import {

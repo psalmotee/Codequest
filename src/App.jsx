@@ -1,3 +1,5 @@
+"use client";
+
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -15,7 +17,12 @@ import Step2 from "./pages/onboardingFlow/Step2";
 import Step3 from "./pages/onboardingFlow/Step3";
 import Step4 from "./pages/onboardingFlow/Step4";
 import CompletedOnboarding from "./pages/onboardingFlow/CompletedOnboarding";
+import TeacherDashboard from "./pages/TeacherDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
+import StudentProfile from "./pages/StudentProfile";
+import CourseLibrary from "./pages/CourseLibrary";
+import CoursePlayer from "./pages/CoursePlayer";
+import Gamification from "./pages/Gamification";
 
 function App() {
   const location = useLocation();
@@ -42,12 +49,28 @@ function App() {
             <Route path="final" element={<CompletedOnboarding />} />
           </Route>
 
-          {/* Student Dashboard */}
-          <Route path="/student-dashboard" element={<StudentDashboard />} />
+          {/* Teacher Dashboard */}
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+
+          {/* Student Dashboard and nested routes */}
+          <Route path="/student-dashboard">
+            <Route index element={<StudentDashboard />} />
+            <Route path="student-profile" element={<StudentProfile />} />
+            <Route path="courses" element={<CourseLibrary />} />
+            <Route path="courses/:courseId" element={<CoursePlayer />} />
+            <Route
+              path="courses/:courseId/lessons/:lessonId"
+              element={<CoursePlayer />}
+            />
+            <Route path="projects" element={<div>Projects Page</div>} />
+            <Route path="gamification" element={<Gamification />} />
+            <Route path="community" element={<div>Community Page</div>} />
+            <Route path="settings" element={<div>Settings Page</div>} />
+          </Route>
         </Routes>
       </AnimatePresence>
     </>
-  )
+  );
 }
 
 export default App;

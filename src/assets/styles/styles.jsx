@@ -167,7 +167,7 @@ export const footerStyles = {
   mainContainer: `bg-[#FF8721] mx-auto pt-8 md:pt-16 pb-8 w-full`,
   innerContainer: sharedContainerStyles,
   contentWrapper: `flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left relative`,
-  section: `mb-6 md:mb-0`,
+  logoContainer: `mb-6 md:mb-0 w-1/2 md:w-1/5 lg:w-1/7`,
   sectionTitle: `font-semibold mb-2 md:mb-0`,
   socialContainer: `flex space-x-6 mb-6 md:mb-0`,
   socialLink: `text-black text-xl hover:text-[#2d2dff]`,

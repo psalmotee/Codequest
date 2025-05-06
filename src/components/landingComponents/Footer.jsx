@@ -7,7 +7,9 @@ import { useInView } from "framer-motion";
 import { footerStyles } from "../../assets/styles/styles";
 import { footerAnimations } from "../../assets/animations/animations";
 import decorativeFooter from "/images/decorative-footer.png";
-import logoFooter from "/images/logo-footer.png";
+import logoFooter from "/images/logo.png";
+
+
 
 function Footer() {
   // Create a reference to the footer element
@@ -41,7 +43,7 @@ function Footer() {
             transition={footerAnimations.container.transition}
           >
             {/* Logo section */}
-            <div className={footerStyles.section}>
+            <div className={footerStyles.logoContainer}>
               <motion.img
                 src={logoFooter}
                 alt="CodeQuest logo"
@@ -97,7 +99,7 @@ function Footer() {
                   className={footerStyles.emailLink}
                 >
                   {" "}
-                  Codequest@gmail.com
+                  CodeQuest@gmail.com
                 </a>
               </p>
             </div>

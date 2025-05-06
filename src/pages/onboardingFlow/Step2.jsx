@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import MyStery from "../../assets/images/Mystery box-bro.png";
+import MyStery from "/images/Mystery box-bro.png";
 import { stepStyles } from "../../assets//styles/styles";
 import {
   onboardingAnimations
