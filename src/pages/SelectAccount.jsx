@@ -11,7 +11,24 @@ const SelectAccount = () => {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   const handleAccountSelection = (accountType) => {
-    navigate("/signup", { state: { role: accountType } });
+    let redirectPath;
+    switch (accountType.toLowerCase()) {
+      case "student":
+        redirectPath = "/student-dashboard";
+        break;
+      case "teacher":
+        redirectPath = "/teacher-dashboard";
+        break;
+      case "parents":
+        redirectPath = "/parent-dashboard";
+        break;
+      case "admin":
+        redirectPath = "/admin-dashboard";
+        break;
+      default:
+        redirectPath = "/signup";
+    }
+    navigate("/signup", { state: { role: accountType, redirectPath } });
   };
 
   return (

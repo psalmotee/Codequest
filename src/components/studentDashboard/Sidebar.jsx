@@ -34,7 +34,7 @@ const navLinks = [
   { name: "Settings", icon: <FaCog />, path: "/student-dashboard/settings" },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ darkMode = false }) => {
   const location = useLocation();
 
   // Determine active link based on current path
@@ -67,7 +67,9 @@ const Sidebar = () => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 70 }}
-      className="h-full w-64 bg-white px-6 py-8 shadow-lg flex flex-col justify-between rounded-r-2xl"
+      className={`h-full w-64 px-6 py-8 shadow-lg flex flex-col justify-between ${
+        darkMode ? "bg-gray-800 text-white" : "bg-white"
+      }`}
     >
       <div>
         {/* Nav Links */}
@@ -78,14 +80,22 @@ const Sidebar = () => {
               to={link.path}
               className={`flex items-center gap-4 font-medium text-lg transition-all duration-200 py-2 ${
                 activeLink === link.name
-                  ? "px-8 bg-[#FFF8F1] border-l-4 border-l-[#2D2DFF] shadow-md rounded-r-full text-[#2D2DFF]"
+                  ? darkMode
+                    ? "px-8 bg-gray-700 border-l-4 border-l-blue-500 shadow-md rounded-r-full text-blue-400"
+                    : "px-8 bg-[#FFF8F1] border-l-4 border-l-[#2D2DFF] shadow-md rounded-r-full text-[#2D2DFF]"
+                  : darkMode
+                  ? "text-gray-300 hover:text-blue-400 rounded-r-lg"
                   : "text-gray-700 hover:text-[#2D2DFF] rounded-r-lg"
               }`}
               onClick={() => setActiveLink(link.name)}
             >
               <span
                 className={`text-xl ${
-                  activeLink === link.name ? "text-[#2D2DFF]" : ""
+                  activeLink === link.name
+                    ? darkMode
+                      ? "text-blue-400"
+                      : "text-[#2D2DFF]"
+                    : ""
                 }`}
               >
                 {link.icon}
@@ -100,7 +110,9 @@ const Sidebar = () => {
       <div className="mt-auto pt-8">
         <Link
           to="/signin"
-          className="flex items-center gap-3 text-red-600 hover:scale-105 transition-transform text-lg font-semibold"
+          className={`flex items-center gap-3 hover:scale-105 transition-transform text-lg font-semibold ${
+            darkMode ? "text-red-400" : "text-red-600"
+          }`}
         >
           <FaSignOutAlt className="text-xl" />
           Sign out

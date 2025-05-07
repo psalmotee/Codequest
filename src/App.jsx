@@ -23,6 +23,9 @@ import StudentProfile from "./pages/StudentProfile";
 import CourseLibrary from "./pages/CourseLibrary";
 import CoursePlayer from "./pages/CoursePlayer";
 import Gamification from "./pages/Gamification";
+import Settings from "./pages/Settings";
+import Notification from "./pages/Notification";
+import Community from "./pages/Community";
 
 function App() {
   const location = useLocation();
@@ -64,8 +67,9 @@ function App() {
             />
             <Route path="projects" element={<div>Projects Page</div>} />
             <Route path="gamification" element={<Gamification />} />
-            <Route path="community" element={<div>Community Page</div>} />
-            <Route path="settings" element={<div>Settings Page</div>} />
+            <Route path="community" element={<Community />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="settings/notification" element={<Notification />} />
           </Route>
         </Routes>
       </AnimatePresence>

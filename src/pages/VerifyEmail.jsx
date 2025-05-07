@@ -14,8 +14,24 @@ const VerifyEmail = () => {
   useEffect(() => {
     const checkVerificationStatus = () => {
       const verified = false; // Replace with actual logic
+      const selectedAccount = localStorage.getItem('selectedAccount');
       if (verified) {
-        navigate("/signin");
+        switch (selectedAccount) {
+          case 'student':
+            navigate("/student-dashboard");
+            break;
+          case 'teacher':
+            navigate("/teacher-dashboard");
+            break;
+          case 'parent':
+            navigate("/parent-dashboard");
+            break;
+          case 'admin':
+            navigate("/admin-dashboard");
+            break;
+          default:
+            navigate("/signin");
+        }
       }
     };
     checkVerificationStatus();
