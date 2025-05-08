@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 const TimeSpentStudying = () => {
@@ -17,7 +16,7 @@ const TimeSpentStudying = () => {
   const maxHours = Math.max(...data.map((item) => item.hours));
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
@@ -52,7 +51,7 @@ const TimeSpentStudying = () => {
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

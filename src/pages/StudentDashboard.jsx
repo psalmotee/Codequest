@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 // Import components
 import Sidebar from "../components/studentDashboard/Sidebar";

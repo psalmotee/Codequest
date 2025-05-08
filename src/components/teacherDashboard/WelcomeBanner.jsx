@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import teacherWelcome from "/images/Lesson-amico.png";
 
 
 const WelcomeBanner = ({ name }) => {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
@@ -28,7 +27,7 @@ const WelcomeBanner = ({ name }) => {
       <div className="hidden md:block">
         <img src={teacherWelcome} alt="Teacher illustration" className="h-32" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

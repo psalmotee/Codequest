@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Ellipse46 from "/images/Ellipse-46.png";
 import Ellipse47 from "/images/Ellipse-47.png";
 import Ellipse49 from "/images/Ellipse-49.png";
@@ -74,7 +73,7 @@ const MyStudents = () => {
   const [studentList] = useState(students);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
@@ -111,7 +110,7 @@ const MyStudents = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

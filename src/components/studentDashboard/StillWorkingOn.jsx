@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const courses = [
   {
     title: "Number Ninjas",
@@ -27,7 +25,7 @@ const courses = [
 
 const StillWorkingOn = () => {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
@@ -82,7 +80,7 @@ const StillWorkingOn = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

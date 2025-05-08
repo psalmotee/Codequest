@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 const navLinks = [
   {
@@ -105,7 +104,7 @@ const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("Home");
 
   return (
-    <motion.aside
+    <aside
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 70 }}
@@ -157,7 +156,7 @@ const Sidebar = () => {
           Sign out
         </button>
       </div>
-    </motion.aside>
+    </aside>
   );
 };
 

@@ -30,7 +30,7 @@ const VerifyEmail = () => {
             navigate("/admin-dashboard");
             break;
           default:
-            navigate("/signin");
+            navigate("/student-dashboard");
         }
       }
     };
@@ -42,7 +42,7 @@ const VerifyEmail = () => {
     setTimeout(() => {
       alert("Verification email resent! 📩 Check your inbox.");
       setResendLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -78,7 +78,7 @@ const VerifyEmail = () => {
 
       <motion.button
         className={verifyEmailStyles.verifyButton}
-        onClick={() => navigate("/signin")}
+        onClick={() => navigate("/student-dashboard")}
         {...verifyEmailAnimations.verifyButton}
       >
         <span className={verifyEmailStyles.verifyButtonText}>

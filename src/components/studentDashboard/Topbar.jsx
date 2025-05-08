@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaBell, FaEnvelope } from "react-icons/fa";
 
 const Topbar = ({ toggleSidebar, sidebarOpen, darkMode = false }) => {
   return (
-    <motion.header
+    <header
       initial={{ y: -20, opacity: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
@@ -113,7 +112,7 @@ const Topbar = ({ toggleSidebar, sidebarOpen, darkMode = false }) => {
           </span>
         </Link>
       </div>
-    </motion.header>
+    </header>
   );
 };
 

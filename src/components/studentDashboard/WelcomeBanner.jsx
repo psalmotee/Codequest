@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
 import BannerImage from '/images/BannerImage.png'
 
 const WelcomeBanner = () => {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
@@ -30,7 +29,7 @@ const WelcomeBanner = () => {
           className="w-full h-auto"
         />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

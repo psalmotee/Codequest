@@ -8,7 +8,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const thisWeekData = [
@@ -55,7 +54,7 @@ const AttendanceChart = () => {
   };
 
   return (
-    <motion.div
+    <div
       className="p-4 rounded-xl bg-[#fff8f0] shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -122,7 +121,7 @@ const AttendanceChart = () => {
           />
         </BarChart>
       </ResponsiveContainer>
-    </motion.div>
+    </div>
   );
 };
 

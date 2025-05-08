@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useState, useRef } from "react";
 import { toast } from "react-toastify";
@@ -6,10 +6,15 @@ import "react-toastify/dist/ReactToastify.css";
 import Illustration from "/images/SigninImage.png";
 import GoogleImage from "/images/GoogleImage.png";
 import { motion, useInView } from "framer-motion";
-import { signStyles, signinStyles, signBtnStyles } from "../assets/styles/styles";
+import {
+  signStyles,
+  signinStyles,
+  signBtnStyles,
+} from "../assets/styles/styles";
 import { signinAnimations } from "../assets/animations/animations";
 
 const SignIn = () => {
+    const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
@@ -59,6 +64,10 @@ const SignIn = () => {
       hideProgressBar: false,
       theme: "colored",
     });
+
+    setTimeout(() => {
+      navigate("/student-dashboard", { state: { email: formData.email } });
+    }, 1000);
   };
 
   return (
@@ -161,6 +170,7 @@ const SignIn = () => {
 
           <motion.button
             type="submit"
+            to="/select-account"
             className={signBtnStyles.button}
             {...signinAnimations.button}
           >

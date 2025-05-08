@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import {
   FaHome,
@@ -63,7 +62,7 @@ const Sidebar = ({ darkMode = false }) => {
   }, [location]);
 
   return (
-    <motion.aside
+    <aside
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 70 }}
@@ -81,11 +80,11 @@ const Sidebar = ({ darkMode = false }) => {
               className={`flex items-center gap-4 font-medium text-lg transition-all duration-200 py-2 ${
                 activeLink === link.name
                   ? darkMode
-                    ? "px-8 bg-gray-700 border-l-4 border-l-blue-500 shadow-md rounded-r-full text-blue-400"
-                    : "px-8 bg-[#FFF8F1] border-l-4 border-l-[#2D2DFF] shadow-md rounded-r-full text-[#2D2DFF]"
+                    ? "px-8 bg-gray-700 border-l-4 border-l-blue-500 shadow-md rounded-r-md text-blue-400"
+                    : "px-8 bg-[#FFF8F1] border-l-4 border-l-[#2D2DFF] shadow-md rounded-r-md text-[#2D2DFF]"
                   : darkMode
-                  ? "text-gray-300 hover:text-blue-400 rounded-r-lg"
-                  : "text-gray-700 hover:text-[#2D2DFF] rounded-r-lg"
+                  ? "text-gray-300 hover:text-blue-400"
+                  : "text-gray-700 hover:text-[#2D2DFF]"
               }`}
               onClick={() => setActiveLink(link.name)}
             >
@@ -118,7 +117,7 @@ const Sidebar = ({ darkMode = false }) => {
           Sign out
         </Link>
       </div>
-    </motion.aside>
+    </aside>
   );
 };
 

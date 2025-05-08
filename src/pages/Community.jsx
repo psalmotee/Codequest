@@ -3,17 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import Sidebar from "../components/studentDashboard/Sidebar";
 import Topbar from "../components/studentDashboard/Topbar";
-import { motion } from "framer-motion";
-import { MessageSquare, Clock, Send, Mic } from "lucide-react";
-import LiveChat from "../components/communityComponents/LiveChat";
 import QuestionCorner from "../components/communityComponents/QuestionCorner";
+import LiveChat from "../components/communityComponents/LiveChat";
 
-export default function Community( questions, categories) {
+export default function Community() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [topbarHeight, setTopbarHeight] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
   const [activeCategory, setActiveCategory] = useState("Question/Confusion");
-  const [activeTab, setActiveTab] = useState("Question Corner"); // New state for tab navigation
+  const [activeTab, setActiveTab] = useState("Question Corner"); // State for tab navigation
   const topbarRef = useRef(null);
 
   // Toggle sidebar
@@ -123,8 +121,6 @@ export default function Community( questions, categories) {
             {activeTab === "Question Corner" ? (
               <QuestionCorner
                 darkMode={darkMode}
-                questions={questions}
-                categories={categories}
                 activeCategory={activeCategory}
                 setActiveCategory={setActiveCategory}
               />

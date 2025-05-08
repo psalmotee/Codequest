@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Maths from "/images/Maths-Test.png";
 import Typing from "/images/Typing.png";
 import Coding from "/images/Coding.png";
@@ -70,7 +69,7 @@ const UpcomingEvents = () => {
   const [upcomingEvents] = useState(events);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6 }}
@@ -132,7 +131,7 @@ const UpcomingEvents = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

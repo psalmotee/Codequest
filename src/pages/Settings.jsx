@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/studentDashboard/Sidebar";
 import Topbar from "../components/studentDashboard/Topbar";
-import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 export default function Settings() {
@@ -174,7 +173,7 @@ export default function Settings() {
 
             {/* Settings Content */}
             {activeTab === "Settings" && (
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -270,12 +269,12 @@ export default function Settings() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Help Content */}
             {activeTab === "Help" && (
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -378,7 +377,7 @@ export default function Settings() {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>

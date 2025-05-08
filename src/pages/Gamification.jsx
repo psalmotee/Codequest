@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Sidebar from "../components/studentDashboard/Sidebar";
 import Topbar from "../components/studentDashboard/Topbar";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import image from "/gamification-img/image.png";
 import image1 from "/gamification-img/image-1.png"
 import image2 from "/gamification-img/image-2.png"
@@ -260,7 +260,7 @@ export default function Gamification() {
                     />
                     <AnimatePresence>
                       {showCategoryNames && (
-                        <motion.div
+                        <div
                           initial={{ opacity: 0, ...namePosition }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           exit={{ opacity: 0 }}
@@ -270,7 +270,7 @@ export default function Gamification() {
                           <h3 className="text-white font-bold text-lg drop-shadow-lg">
                             {category.name}
                           </h3>
-                        </motion.div>
+                        </div>
                       )}
                     </AnimatePresence>
                   </div>
@@ -283,7 +283,7 @@ export default function Gamification() {
               <h2 className="text-xl font-semibold mb-6">{activeCategory}</h2>
               <div className="space-y-4">
                 {filteredItems.map((item) => (
-                  <motion.div
+                  <div
                     key={item.id}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -308,7 +308,7 @@ export default function Gamification() {
                       </p>
                     </div>
                     <ProgressCircle progress={item.progress} />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

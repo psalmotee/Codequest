@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Sidebar from "../components/studentDashboard/Sidebar";
 import Topbar from "../components/studentDashboard/Topbar";
-import { motion } from "framer-motion";
-import { FaRegBell, FaRegClock } from "react-icons/fa";
+import { FaRegClock } from "react-icons/fa";
+import Mia from "/notification-img/Mia.png";
 
 export default function Notification() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -43,6 +43,7 @@ export default function Notification() {
     {
       id: 1,
       avatar: "LU",
+      instructor: "Level Up",
       message:
         "<strong>You leveled Up!</strong> Great work on your math missions</strong>! You’re moving up to the next level—bigger terrain, brighter skies!",
       date: "Yesterday",
@@ -51,6 +52,7 @@ export default function Notification() {
     {
       id: 2,
       avatar: "EX",
+      instructor: "Explorer",
       message:
         "<strong>Ready To Explore?</strong> A new quiz just dropped: use your skills to find clues, solve problems, and discover something cool!",
       date: "21 April",
@@ -59,6 +61,7 @@ export default function Notification() {
     {
       id: 3,
       avatar: "PR",
+      instructor: "Project Reminder",
       message:
         "<strong>Project Reminder!</strong> Don’t forget to finish your “Build a Bridge” challenge—it’s due tomorrow, and there are bonus points up for grab!",
       date: "19 April",
@@ -66,7 +69,8 @@ export default function Notification() {
     },
     {
       id: 4,
-      avatar: "MI",
+      avatar: Mia,
+      instructor: "Mia",
       message:
         "<strong>Mia wants to be your friend!</strong> Tap here to check out her profile and decide if you’d like to be friends too.",
       date: "18 April",
@@ -75,6 +79,7 @@ export default function Notification() {
     {
       id: 5,
       avatar: "NR",
+      instructor: "News",
       message:
         "<strong>News Flash!</strong> A live Q&A with real scientists is happening this Friday! Bring your curiosity and join the fun.",
       date: "15 April",
@@ -83,6 +88,7 @@ export default function Notification() {
     {
       id: 6,
       avatar: "MC",
+      instructor: "Mission Complete",
       message:
         "<strong>Mission Complete!</strong> You finished this week's STEM guide—high five! New activities will be ready on Monday!",
       date: "11 April",
@@ -91,6 +97,7 @@ export default function Notification() {
     {
       id: 7,
       avatar: "HO",
+      instructor: "Hooray",
       message:
         "<strong>Hooray!</strong> You just finished a tough challenge in record time! Your brain is getting stronger with every step—keep it up!",
       date: "7 April",
@@ -99,6 +106,7 @@ export default function Notification() {
     {
       id: 8,
       avatar: "MA",
+      instructor: "Math Quiz",
       message:
         "<strong>Math Quiz Alert!</strong> A tricky puzzle is waiting for you in the Numbers Zone—can you crack the code and find the treasure?",
       date: "3 April",
@@ -107,6 +115,7 @@ export default function Notification() {
     {
       id: 9,
       avatar: "SS",
+      instructor: "STEM Star",
       message:
         "<strong>STEM Star Of The Day!</strong> Your name is on the leaderboard for awesome participation—go see your spotlight moment!",
       date: "25 March",
@@ -115,6 +124,7 @@ export default function Notification() {
     {
       id: 10,
       avatar: "SD",
+      instructor: "Save The Date",
       message:
         "<strong>Save The Date!</strong> A special STEM event is coming up next week with cool games, live classes, and surprises—don’t miss it!",
       date: "22 March",
@@ -123,6 +133,7 @@ export default function Notification() {
     {
       id: 11,
       avatar: "MU",
+      instructor: "Mini Challenge",
       message:
         "<strong>Mini Challenge Unlocked!</strong> A new 5-minute game just dropped—perfect for a quick brain warm-up. Want to try it now?",
       date: "19 March",
@@ -131,6 +142,7 @@ export default function Notification() {
     {
       id: 12,
       avatar: "AU",
+      instructor: "Adventure",
       message:
         "<strong>Adventure Unlocked!</strong> You just discovered a new island in the Explorer Map. Tap to explore and start a new mission",
       date: "15 March",
@@ -169,7 +181,7 @@ export default function Notification() {
           }`}
         >
           <div className="max-w-3xl mx-auto">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
@@ -195,7 +207,14 @@ export default function Notification() {
                           darkMode ? "bg-gray-700" : "bg-[#A37D35]"
                         }`}
                       >
-                        {notification.avatar}
+                        <img
+                          src={
+                            notification.avatar || "/placeholder.svg"
+                          }
+                          alt={notification.instructor}
+                          className="w-12 h-12 rounded-full object-cover mr-3"
+                        />
+                        {/* {notification.avatar} */}
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
@@ -230,7 +249,7 @@ export default function Notification() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

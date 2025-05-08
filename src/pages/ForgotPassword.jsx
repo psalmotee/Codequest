@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import {
   forgotPasswordStyles,
 } from "../assets/styles/styles";
