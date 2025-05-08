@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+"use client";
 
 // Sample data — replace or map through your actual API later
 const classes = [
@@ -30,7 +30,7 @@ const classes = [
 
 const UpcomingClasses = () => {
   return (
-    <motion.div
+    <div
       className="bg-{#fff} rounded-2xl p-4 shadow-sm border border-gray-100"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ const UpcomingClasses = () => {
           </button>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

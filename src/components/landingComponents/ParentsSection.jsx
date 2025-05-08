@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { parentsStyles } from "../../assets/styles/styles";
 import { parentsAnimations } from "../../assets/animations/animations";
-import parentImg from "../../assets/images/parent-img.png";
+import parentImg from "/images/parent-img.png";
 import { useNavigate } from "react-router-dom";
 
 

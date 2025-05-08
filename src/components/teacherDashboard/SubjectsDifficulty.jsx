@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 const subjectsData = [
   { name: "Python", value: 40, color: "#FF6384" },
@@ -17,7 +16,7 @@ const SubjectsDifficulty = () => {
   const total = data.reduce((sum, item) => sum + item.value, 0);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
@@ -87,7 +86,7 @@ const SubjectsDifficulty = () => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

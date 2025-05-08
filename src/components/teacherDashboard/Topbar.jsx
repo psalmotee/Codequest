@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import teacherImage from "/images/teacher-image.png";
 
 const Topbar = ({ toggleSidebar, sidebarOpen }) => {
   return (
-    <motion.header
+    <header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
@@ -116,7 +116,7 @@ const Topbar = ({ toggleSidebar, sidebarOpen }) => {
         </button>
         <div className="flex items-center gap-2">
           <img
-            src="/images/teacher-avatar.png"
+            src={teacherImage}
             alt="Teacher Avatar"
             className="h-8 w-8 rounded-full object-cover"
           />
@@ -125,7 +125,7 @@ const Topbar = ({ toggleSidebar, sidebarOpen }) => {
           </span>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 };
 

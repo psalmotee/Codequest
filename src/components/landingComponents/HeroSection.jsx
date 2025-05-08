@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { heroStyles } from "../../assets/styles/styles";
 import { heroAnimations } from "../../assets/animations/animations";
-import heroImg from "../../assets/images/hero-img.png";
-import aboutUsImg from "../../assets/images/AboutUs-img.png";
-import teacherImg from "../../assets/images/teacher-img.png";
-import parentImg from "../../assets/images/parent-img.png";
+import heroImg from "/images/hero-img.png";
+import aboutUsImg from "/images/AboutUs-img.png";
+import teacherImg from "/images/teacher-img.png";
+import parentImg from "/images/parent-img.png";
 
 function HeroSection() {
   // State to track the current image index for the slideshow

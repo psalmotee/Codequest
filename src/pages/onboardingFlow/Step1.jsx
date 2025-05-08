@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import OuterSpace from "../../assets/images/Outer space-pana.png";
+import OuterSpace from "/images/Outer space-pana.png";
 import { toast } from "react-toastify";
 import { stepStyles } from "../../assets//styles/styles";
 import {

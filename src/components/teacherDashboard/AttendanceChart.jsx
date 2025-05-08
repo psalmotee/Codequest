@@ -1,85 +1,127 @@
-"use client";
+import React, { useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import { ChevronDown } from "lucide-react";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+const thisWeekData = [
+  { day: "Mon", Present: 75, Absent: 25 },
+  { day: "Tue", Present: 80, Absent: 20 },
+  { day: "Wed", Present: 57, Absent: 43 },
+  { day: "Thu", Present: 70, Absent: 30 },
+  { day: "Fri", Present: 55, Absent: 45 },
+];
 
-const attendanceData = [
-  { day: "Mon", present: 90, absent: 10 },
-  { day: "Tue", present: 85, absent: 15 },
-  { day: "Wed", present: 75, absent: 25 },
-  { day: "Thu", present: 80, absent: 20 },
-  { day: "Fri", present: 70, absent: 30 },
+const pastWeekData = [
+  { day: "Mon", Present: 70, Absent: 30 },
+  { day: "Tue", Present: 75, Absent: 25 },
+  { day: "Wed", Present: 55, Absent: 45 },
+  { day: "Thur", Present: 65, Absent: 35 },
+  { day: "Fri", Present: 45, Absent: 45 },
 ];
 
 const AttendanceChart = () => {
-  const [data] = useState(attendanceData);
-  const maxValue = 100; // Maximum possible value for scaling
+  const [data, setData] = useState(thisWeekData); // Default to 'thisWeekData'
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedPeriod, setSelectedPeriod] = useState("This week");
+
+  const periods = ["This week", "Last week", "2 weeks ago", "3 weeks ago"];
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const selectPeriod = (period) => {
+    setSelectedPeriod(period);
+    setShowDropdown(false);
+
+    // Update data based on selected period
+    if (period === "This week") {
+      setData(thisWeekData);
+    } else if (period === "Last week") {
+      setData(pastWeekData);
+    } else if (period === "2 weeks ago") {
+      setData(pastWeekData); // Update with the actual data for two weeks ago
+    } else if (period === "3 weeks ago") {
+      setData(pastWeekData); // Update with the actual data for three weeks ago
+    }
+  };
 
   return (
-    <motion.div
+    <div
+      className="p-4 rounded-xl bg-[#fff8f0] shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4 }}
-      className="bg-white p-5 rounded-lg shadow-sm"
+      transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-medium">Attendance</h3>
-        <button className="text-sm text-gray-500 hover:text-gray-700">
-          This week
-        </button>
-      </div>
+        <div className="relative z-50">
+          <button
+            onClick={toggleDropdown}
+            className="text-sm text-gray-500 hover:text-gray-700 flex items-center gap-1"
+          >
+            {selectedPeriod}
+            <ChevronDown className="w-4 h-4" />
+          </button>
 
-      <div className="h-64 flex flex-col">
-        {/* Chart Legend */}
-        <div className="flex items-center justify-end mb-2 space-x-4">
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-blue-600 rounded-sm mr-1"></div>
-            <span className="text-xs">Present</span>
-          </div>
-          <div className="flex items-center">
-            <div className="w-3 h-3 bg-amber-500 rounded-sm mr-1"></div>
-            <span className="text-xs">Absent</span>
-          </div>
-        </div>
-
-        {/* Y-axis labels */}
-        <div className="flex flex-1">
-          <div className="flex flex-col justify-between pr-2 text-xs text-gray-500">
-            <span>100</span>
-            <span>75</span>
-            <span>50</span>
-            <span>25</span>
-            <span>0</span>
-          </div>
-
-          {/* Chart bars */}
-          <div className="flex-1 flex items-end justify-between">
-            {data.map((item, index) => (
-              <div key={index} className="flex flex-col items-center w-full">
-                {/* Stacked bars */}
-                <div className="w-full flex justify-center mb-1">
-                  <div className="w-8 flex flex-col">
-                    {/* Present bar */}
-                    <div
-                      className="w-full bg-blue-600 rounded-t"
-                      style={{ height: `${(item.present / maxValue) * 180}px` }}
-                    ></div>
-                    {/* Absent bar */}
-                    <div
-                      className="w-full bg-amber-500"
-                      style={{ height: `${(item.absent / maxValue) * 180}px` }}
-                    ></div>
-                  </div>
-                </div>
-
-                {/* X-axis label */}
-                <span className="text-xs text-gray-500">{item.day}</span>
-              </div>
-            ))}
-          </div>
+          {showDropdown && (
+            <div className="absolute right-0 mt-1 w-36 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+              {periods.map((period, index) => (
+                <button
+                  key={index}
+                  onClick={() => selectPeriod(period)}
+                  className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                >
+                  {period}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
-    </motion.div>
+
+      <div className="flex gap-4 text-sm mb-2">
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 bg-blue-600 rounded-full"></span> Present
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 bg-orange-500 rounded-full"></span> Absent
+        </div>
+      </div>
+
+      <ResponsiveContainer width="100%" height={350}>
+        <BarChart data={data} barGap={12}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis
+            ticks={[0, 25, 50, 75, 100]}
+            domain={[0, 100]}
+          />
+          <Tooltip />
+          <Bar
+            dataKey="Absent"
+            stackId="a"
+            fill="#fb923c"
+            barSize={10}
+            radius={[0, 0, 0, 0]}
+          />
+          <Bar
+            dataKey="Present"
+            stackId="a"
+            fill="#3b82f6"
+            barSize={10}
+            radius={[4, 4, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

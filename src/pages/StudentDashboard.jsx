@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 // Import components
 import Sidebar from "../components/studentDashboard/Sidebar";
@@ -88,7 +87,9 @@ export default function StudentDashboard() {
         </div>
 
         {/* Right Sidebar - Only visible on large screens */}
-        <div className="hidden bg-[#fff] lg:block w-80 p-4 space-y-6 ">
+        <div
+          className="hidden bg-[#fff] lg:block w-80 p-4 space-y-6 "
+        >
           <ProgressOverview />
           <UpcomingClasses />
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 const classes = [
   { id: 1, name: "Class A", progress: 85 },
@@ -15,7 +14,7 @@ const ClassProgress = () => {
   const [classList] = useState(classes);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
@@ -68,7 +67,7 @@ const ClassProgress = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { useEffect } from "react";
-import RocketRafiki from "../../assets/images/Rocket-rafiki.png";
+import RocketRafiki from "/images/Rocket-rafiki.png";
 import { completedStyles } from "../../assets//styles/styles";
 import { onboardingAnimations } from "../../assets/animations/animations";
 

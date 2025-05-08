@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { headerStyles } from "../../assets/styles/styles";
 import { headerAnimations } from "../../assets/animations/animations";
-import logo from "../../assets/images/logo.png";
-import decorativeOrangeColor from "../../assets/images/decorative-orange-color.png";
+import logo from "/images/logo.png";
+import decorativeOrangeColor from "/images/decorative-orange-color.png";
 
 function Header() {
   // State to manage the mobile menu toggle

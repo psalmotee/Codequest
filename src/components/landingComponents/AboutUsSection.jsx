@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { aboutStyles } from "../../assets/styles/styles";
 import { aboutAnimations } from "../../assets/animations/animations";
-import aboutUsImg from "../../assets/images/AboutUs-img.png";
+import aboutUsImg from "/images/AboutUs-img.png";
 import { useNavigate } from "react-router-dom";
 
 function AboutUsSection() {

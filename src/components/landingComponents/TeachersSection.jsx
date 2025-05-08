@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { teachersStyles } from "../../assets/styles/styles";
 import { teachersAnimations } from "../../assets/animations/animations";
-import teacherImg from "../../assets/images/teacher-img.png";
+import teacherImg from "/images/teacher-img.png";
 
 function TeachersSection() {
   //  Teach With CodeQuest Button function: Handles navigation to the Select Account page

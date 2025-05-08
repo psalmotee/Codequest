@@ -1,35 +1,79 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import Ellipse46 from "/images/Ellipse-46.png";
+import Ellipse47 from "/images/Ellipse-47.png";
+import Ellipse49 from "/images/Ellipse-49.png";
+import Jayy from "/images/jayy.png";
 
 const students = [
   {
     id: 1,
-    name: "Temitope Badejo",
+    name: "Temitope Balogun",
     progress: 92,
-    avatar: "/images/student1.png",
+    avatar: Ellipse46,
   },
   {
     id: 2,
     name: "Grace Okonkwo",
     progress: 88,
-    avatar: "/images/student2.png",
+    avatar: Ellipse47,
   },
   {
     id: 3,
-    name: "Amoke Olatunji",
+    name: "Jumoke Olatunji",
     progress: 73,
-    avatar: "/images/student3.png",
+    avatar: Ellipse49,
   },
-  { id: 4, name: "Joseph Koiki", progress: 90, avatar: "/images/student4.png" },
+  {
+    id: 4,
+    name: "Joseph Ajayi",
+    progress: 60,
+    avatar: Jayy,
+  },
+  {
+    id: 5,
+    name: "Samuel Adeyemi",
+    progress: 85,
+    avatar: Ellipse46,
+  },
+  {
+    id: 6,
+    name: "Chinwe Eze",
+    progress: 78,
+    avatar: Ellipse47,
+  },
+  {
+    id: 7,
+    name: "Adebayo Akin",
+    progress: 90,
+    avatar: Ellipse49,
+  },
+  {
+    id: 8,
+    name: "Ngozi Nwosu",
+    progress: 65,
+    avatar: Jayy,
+  },
+  {
+    id: 9,
+    name: "Tunde Alabi",
+    progress: 80,
+    avatar: Ellipse46,
+  },
+  {
+    id: 10,
+    name: "Amaka Obi",
+    progress: 70,
+    avatar: Ellipse47,
+  },
 ];
 
 const MyStudents = () => {
   const [studentList] = useState(students);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
@@ -41,11 +85,13 @@ const MyStudents = () => {
           View all
         </button>
       </div>
-      <div className="space-y-4">
+      <div
+        className="space-y-4 max-h-64 overflow-y-auto"
+      >
         {studentList.map((student) => (
           <div key={student.id} className="flex items-center space-x-4">
             <img
-              src={student.avatar || "/placeholder.svg"}
+              src={student.avatar}
               alt={student.name}
               className="w-10 h-10 rounded-full object-cover"
             />
@@ -64,7 +110,7 @@ const MyStudents = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import emailIllustration from "../assets/images/VerifyEmailImage.png";
+import emailIllustration from "/images/VerifyEmailImage.png";
 import { verifyEmailStyles } from "../assets/styles/styles";
 import { verifyEmailAnimations } from "../assets/animations/animations";
 
@@ -14,8 +14,24 @@ const VerifyEmail = () => {
   useEffect(() => {
     const checkVerificationStatus = () => {
       const verified = false; // Replace with actual logic
+      const selectedAccount = localStorage.getItem('selectedAccount');
       if (verified) {
-        navigate("/signin");
+        switch (selectedAccount) {
+          case 'student':
+            navigate("/student-dashboard");
+            break;
+          case 'teacher':
+            navigate("/teacher-dashboard");
+            break;
+          case 'parent':
+            navigate("/parent-dashboard");
+            break;
+          case 'admin':
+            navigate("/admin-dashboard");
+            break;
+          default:
+            navigate("/student-dashboard");
+        }
       }
     };
     checkVerificationStatus();
@@ -26,7 +42,7 @@ const VerifyEmail = () => {
     setTimeout(() => {
       alert("Verification email resent! 📩 Check your inbox.");
       setResendLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -62,7 +78,7 @@ const VerifyEmail = () => {
 
       <motion.button
         className={verifyEmailStyles.verifyButton}
-        onClick={() => navigate("/signin")}
+        onClick={() => navigate("/student-dashboard")}
         {...verifyEmailAnimations.verifyButton}
       >
         <span className={verifyEmailStyles.verifyButtonText}>

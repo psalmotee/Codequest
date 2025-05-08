@@ -4,8 +4,8 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
-import Illustration from "../assets/images/SignupImage.png";
-import GoogleLogo from "../assets/images/GoogleImage.png";
+import Illustration from "/images/SignupImage.png";
+import GoogleLogo from "/images/GoogleImage.png";
 import { signStyles, signBtnStyles } from "../assets/styles/styles";
 import { signupAnimations } from "../assets/animations/animations";
 
@@ -38,7 +38,7 @@ const Signup = () => {
     if (!validateForm()) {
       toast.error("Check your details and try again.", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         theme: "light",
       });
@@ -47,14 +47,14 @@ const Signup = () => {
 
     toast.success("Signup successful! 🎉 Redirecting to verify email...", {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       theme: "colored",
     });
 
     setTimeout(() => {
       navigate("/verify-email", { state: { email: formData.email } });
-    }, 2000);
+    }, 1000);
   };
 
   return (

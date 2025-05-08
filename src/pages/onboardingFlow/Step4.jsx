@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import CodingAmico from "../../assets/images/Coding-amico.png";
+import CodingAmico from "/images/Coding-amico.png";
 import { stepStyles } from "../../assets//styles/styles";
 import {
   onboardingAnimations,

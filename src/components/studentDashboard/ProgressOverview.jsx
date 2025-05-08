@@ -1,12 +1,11 @@
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { motion } from 'framer-motion';
 
 const ProgressOverview = () => {
   const percentage = 60;
 
   return (
-    <motion.div
+    <div
       className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -35,7 +34,7 @@ const ProgressOverview = () => {
           </div>
         </CircularProgressbarWithChildren>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

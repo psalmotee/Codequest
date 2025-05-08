@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+"use client";
 
 const continueCourses = [
   {
@@ -17,7 +17,7 @@ const continueCourses = [
 
 const ContinueLearning = () => {
   return (
-    <motion.div
+    <div
       className="mt-8"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const ContinueLearning = () => {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

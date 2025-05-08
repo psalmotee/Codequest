@@ -1,3 +1,5 @@
+"use client";
+
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -17,6 +19,13 @@ import Step4 from "./pages/onboardingFlow/Step4";
 import CompletedOnboarding from "./pages/onboardingFlow/CompletedOnboarding";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
+import StudentProfile from "./pages/StudentProfile";
+import CourseLibrary from "./pages/CourseLibrary";
+import CoursePlayer from "./pages/CoursePlayer";
+import Gamification from "./pages/Gamification";
+import Settings from "./pages/Settings";
+import Notification from "./pages/Notification";
+import Community from "./pages/Community";
 
 function App() {
   const location = useLocation();
@@ -43,9 +52,25 @@ function App() {
             <Route path="final" element={<CompletedOnboarding />} />
           </Route>
 
-          {/* Student Dashboard */}
-          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />          
-          <Route path="/student-dashboard" element={<StudentDashboard />} />          
+          {/* Teacher Dashboard */}
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+
+          {/* Student Dashboard and nested routes */}
+          <Route path="/student-dashboard">
+            <Route index element={<StudentDashboard />} />
+            <Route path="student-profile" element={<StudentProfile />} />
+            <Route path="courses" element={<CourseLibrary />} />
+            <Route path="courses/:courseId" element={<CoursePlayer />} />
+            <Route
+              path="courses/:courseId/lessons/:lessonId"
+              element={<CoursePlayer />}
+            />
+            <Route path="projects" element={<div>Projects Page</div>} />
+            <Route path="gamification" element={<Gamification />} />
+            <Route path="community" element={<Community />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="settings/notification" element={<Notification />} />
+          </Route>
         </Routes>
       </AnimatePresence>
     </>

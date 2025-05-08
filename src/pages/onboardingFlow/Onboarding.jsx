@@ -1,7 +1,7 @@
 "use client";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import CarImage from "../../assets/images/Starman-bro.png";
+import CarImage from "/images/Starman-bro.png";
 import { onboardingStyles } from "../../assets//styles/styles";
 import { onboardingAnimations } from "../../assets/animations/animations";
 
