@@ -1,5 +1,21 @@
 import { MessageSquare, Clock, Send, Mic } from "lucide-react";
 
+// import image
+import mukky from "/community-img/mukky.png"
+import james from "/community-img/james.png";
+import mary from "/community-img/mary.png";
+import justice from "/community-img/justice.png";
+import oluwa from "/community-img/oluwa.png";
+import mike from "/community-img/mike.png";
+import temmy from "/community-img/temmy.png";
+import angela from "/community-img/angela.png";
+import toriola from "/community-img/toriola.png";
+import magic from "/community-img/magic.png";
+import cr7 from "/community-img/cr7.png";
+import monaky from "/community-img/monaky.png";
+
+
+
 const QuestionCorner = ({ darkMode, activeCategory, setActiveCategory }) => {
   // Community questions data
   const questions = [
@@ -7,97 +23,97 @@ const QuestionCorner = ({ darkMode, activeCategory, setActiveCategory }) => {
       id: 1,
       title: "How Do Robots Know What to Do?",
       content:
-        "I'm really curious about how robots are programmed. Do they have some kind of artificial intelligence that helps them make decisions? Or are they just following a set of instructions? I've been watching some videos about Boston Dynamics robots and they seem so smart!",
+        "Robots are super cool they can move, talk, solve problems, and even play games! But how do they know what to do and when to do it? Are they using their own brains to decide, or are humans giving them secret instructions? I really want to understand what’s going on inside a robot’s head!",
       author: {
-        name: "Alex Chen",
-        avatar: "/images/avatars/alex.png",
+        name: "mukkkky",
+        avatar: mukky,
       },
-      replies: 3,
-      timestamp: "2h ago",
+      replies: 25,
+      timestamp: "4hrs ago",
     },
     {
       id: 2,
       title: "Who Invented the Internet?",
       content:
-        "For my history of technology project, I need to know who actually invented the internet. I've heard different names like Tim Berners-Lee and ARPANET, but I'm confused about who should get credit for the actual invention. Can anyone help clarify this?",
+        "We use the internet all the time for games, videos, school, and chatting with friends but who invented it in the first place? Was it just one person or a whole team? And how does something invisible like Wi-Fi send so much information so fast? I’d love to know how it all began!",
       author: {
-        name: "Sarah Kim",
-        avatar: "/images/avatars/sarah.png",
+        name: "James11",
+        avatar: james,
       },
-      replies: 7,
-      timestamp: "5h ago",
+      replies: 107,
+      timestamp: "7hrs ago",
     },
     {
       id: 3,
       title: "What's the Fun Way to Learn Math?",
       content:
-        "Mathematics has never been my strong suit, but I really want to improve my understanding. Are there any fun games or interactive websites that can help make learning math more enjoyable? I've tried some apps but they get boring quickly.",
+        "Sometimes math feels like a big puzzle that’s hard to solve but I really want it to be fun! Do you know any cool games, funny tricks, or easy ways to remember things like times tables or fractions? I’m hoping to find some fun ways to make math feel more like play and less like work!",
       author: {
-        name: "Michael Johnson",
-        avatar: "/images/avatars/michael.png",
+        name: "Marryfone",
+        avatar: mary,
       },
-      replies: 4,
-      timestamp: "1d ago",
+      replies: 133,
+      timestamp: "8hrs ago",
     },
     {
       id: 4,
       title: "Why Does the Moon Change Shape?",
       content:
-        "My little sister asked me why the moon looks different every night, and I realized I don't have a good explanation. I know it has something to do with the phases, but can someone explain in simple terms why we see different shapes throughout the month?",
+        "One night the moon is a big glowing circle, and another night it’s just a little sliver or even totally gone! Why does it keep changing like that? Is it hiding behind clouds, or is something else going on in space? I’d love to know why the moon doesn’t always look the same!",
       author: {
-        name: "Emily Wong",
-        avatar: "/images/avatars/emily.png",
+        name: "Justice",
+        avatar: justice,
       },
-      replies: 6,
-      timestamp: "2d ago",
+      replies: 200,
+      timestamp: "8hrs ago",
     },
     {
       id: 5,
       title: "How Can I Make My Own Game?",
       content:
-        "I've been playing video games for years and now I want to try making one myself. I don't have any coding experience, but I'm willing to learn. What would be the best way to start? Are there any beginner-friendly tools or resources you'd recommend?",
+        "I’ve got awesome ideas for a game maybe with dragons, space robots, or a candy maze! But I don’t know how to turn those ideas into a real game. What tools or apps should I use? Do I need to learn to code first, or is there an easier way to get started? I’d love help figuring out how to bring my game to life!",
       author: {
-        name: "David Miller",
-        avatar: "/images/avatars/david.png",
+        name: "OluwaT",
+        avatar: oluwa,
       },
-      replies: 11,
-      timestamp: "3d ago",
+      replies: 127,
+      timestamp: "11hrs ago",
     },
     {
       id: 6,
       title: "Can You Clone Art or Animation?",
       content:
-        "I really like the animation style in shows like 'Adventure Time' and I'm wondering if it's possible to recreate that style. Is it considered copying if I make my own characters but use a similar style? What's the line between inspiration and copying?",
+        "I really enjoy drawing, painting, and making up my own characters and I’ve heard you can use code to bring your art to life! Can I use programming to make pictures move, create animations, or even design my own digital comics or games? I’d love to know how to mix my creativity with tech in a fun way!",
       author: {
-        name: "Sophia Garcia",
-        avatar: "/images/avatars/sophia.png",
+        name: "Mike",
+        avatar: mike,
       },
-      replies: 5,
-      timestamp: "4d ago",
+      replies: 139,
+      timestamp: "18hrs ago",
     },
     {
       id: 7,
       title: "Is There Life on Other Planets?",
       content:
-        "I've been reading about exoplanets and the search for extraterrestrial life. With all the planets we've discovered, what are the chances that there's life out there? Has NASA found any evidence yet? I'm really interested in astronomy and space exploration.",
+        "Our planet is bursting with life trees, bugs, dolphins, and people but what about the rest of space? Could there be aliens on Mars, tiny creatures on faraway moons, or life we haven’t even imagined yet? I really want to know if Earth is the only place with living things or if we have cosmic neighbors out there!",
       author: {
-        name: "James Wilson",
-        avatar: "/images/avatars/james.png",
+        name: "Temmy",
+        avatar: temmy,
       },
-      replies: 8,
-      timestamp: "5d ago",
+      replies: 303,
+      timestamp: "22hrs ago",
     },
     {
       id: 8,
-      title: "Why Do Colors Exist in the Ocean?",
+      title: "Why Do Cakes Riset in the Oven?",
       content:
-        "During my marine biology class, we learned that the deep ocean should be completely dark, but there are still colorful fish down there. If there's no light, why would fish evolve to have colors? What's the evolutionary advantage of being colorful in the dark?",
+        "It’s like magic when we mix cake batter, it’s all gooey and flat, but once it goes into the oven, it rises and turns into something soft and delicious! What’s really going on in there? Is it the heat, some special ingredient, or a secret science trick that makes cakes grow and get fluffy?",
       author: {
-        name: "Olivia Taylor",
-        avatar: "/images/avatars/olivia.png",
+        name: "Angela",
+        avatar: angela,
       },
-      replies: 4,
-      timestamp: "6d ago",
+      replies: 225,
+      timestamp: "1day ago",
     },
   ];
 
@@ -208,6 +224,13 @@ const QuestionCorner = ({ darkMode, activeCategory, setActiveCategory }) => {
                       darkMode ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
+                    <span
+                      className={`text-sm mr-1 ${
+                        darkMode ? "text-gray-500" : "text-gray-300"
+                      }`}
+                    >
+                      Asked by
+                    </span> 
                     {question.author.name}
                   </span>
                 </div>
@@ -262,11 +285,11 @@ const QuestionCorner = ({ darkMode, activeCategory, setActiveCategory }) => {
           </h3>
           <ul className="space-y-3">
             {[
-              { name: "Toriola Jimmy", avatar: "/images/avatars/toriola.png" },
-              { name: "Temmy", avatar: "/images/avatars/temmy.png" },
-              { name: "Magic_Mimi", avatar: "/images/avatars/magic_mimi.png" },
-              { name: "CR7", avatar: "/images/avatars/cr7.png" },
-              { name: "Monaky", avatar: "/images/avatars/monaky.png" },
+              { name: "Toriola Jimmy", avatar: toriola },
+              { name: "Temmy", avatar: temmy },
+              { name: "Magic_Mimi", avatar: magic },
+              { name: "CR7", avatar: cr7 },
+              { name: "Monaky", avatar: monaky },
             ].map((contributor, index) => (
               <li key={index} className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full overflow-hidden">

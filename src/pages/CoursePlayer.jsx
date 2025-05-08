@@ -15,6 +15,7 @@ import {
 
 // Import course images for the demo
 import image1 from "/CourseLibrary-img/image 1.png";
+import grace from "/CourseLibrary-img/Grace.png";
 
 export default function CoursePlayer() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -66,8 +67,8 @@ export default function CoursePlayer() {
   // Course data (in a real app, this would come from an API based on courseId)
   const courseData = {
     title: "Geometry and Shapes",
-    instructor: "Sarah Thompson",
-    instructorAvatar: "/images/instructor-avatar.png",
+    instructor: "Grace Thompson",
+    instructorAvatar: grace,
     description:
       "Shapes are everywhere - daily in life course, you'll learn how to spot them, measure them, and solve problems with them.\n\nIn Geometry and Shapes, we'll explore how shapes and space are used in everyday life. You'll discover the properties of 2D and 3D shapes like triangles, circles, squares, rectangles, cubes, spheres, and more. By the end of this course, you'll be able to identify shapes, calculate their areas, and solve geometry problems.",
     videoUrl: "https://example.com/geometry-intro.mp4",
